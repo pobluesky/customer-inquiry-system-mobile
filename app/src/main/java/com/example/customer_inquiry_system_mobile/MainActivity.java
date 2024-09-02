@@ -1,35 +1,49 @@
 package com.example.customer_inquiry_system_mobile;
 
 import android.os.Bundle;
+import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import java.util.ArrayList;
-import com.example.customer_inquiry_system_mobile.databinding.ActivityMainBinding;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
-    private RecyclerViewAdapter recyclerViewAdapter;
+    private final FragmentManager fragmentManager = getSupportFragmentManager();
+    private final ListFragment fragmentList = new ListFragment();
+    private final QuestionFragment fragmentQuestion = new QuestionFragment();
+    private final DashboardFragment fragmentDashboard = new DashboardFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        // ActivityMainBinding을 초기화
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.menu_frame_layout, fragmentList).commitAllowingStateLoss();
 
-        // RecyclerView에 표시할 데이터 생성
-        ArrayList<Person> list = new ArrayList<>();
-        list.add(new Person(R.drawable.question, "오제이", "010-1234-1234"));
-        list.add(new Person(R.drawable.question, "홍길동", "010-1111-2222"));
-        list.add(new Person(R.drawable.question, "마이네임", "010-0000-0000"));
+        BottomNavigationView bottomNavigationView = findViewById(R.id.menu_bottom_nav);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
+    }
 
-        // RecyclerViewAdapter 초기화
-        recyclerViewAdapter = new RecyclerViewAdapter(list);
+    class ItemSelectedListener implements BottomNavigationView.OnNavigationItemSelectedListener {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-        // RecyclerView 설정
-        binding.mainRecyclerview.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        binding.mainRecyclerview.setAdapter(recyclerViewAdapter);
+            int itemId = menuItem.getItemId();
+            if (itemId == R.id.fragment_list) {
+                transaction.replace(R.id.menu_frame_layout, fragmentList).commitAllowingStateLoss();
+            } else if (itemId == R.id.fragment_question) {
+                transaction.replace(R.id.menu_frame_layout, fragmentQuestion).commitAllowingStateLoss();
+            } else if (itemId == R.id.fragment_dashboard) {
+                transaction.replace(R.id.menu_frame_layout, fragmentDashboard).commitAllowingStateLoss();
+            }
+
+            return true;
+        }
     }
 }
