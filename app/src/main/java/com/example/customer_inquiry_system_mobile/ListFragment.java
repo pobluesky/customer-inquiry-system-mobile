@@ -26,9 +26,7 @@ public class ListFragment extends Fragment {
 
     private RecyclerView recyclerView;
 
-    public ListFragment() {
-        // Required empty public constructor
-    }
+    public ListFragment() {}
 
     public static ListFragment newInstance() {
         return new ListFragment();
@@ -38,14 +36,11 @@ public class ListFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_list, container, false);
 
-        // Setup RecyclerView
         recyclerView = rootView.findViewById(R.id.inquiryList_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // Load inquiries from the API
         loadInquiries();
 
         return rootView;
@@ -61,19 +56,27 @@ public class ListFragment extends Fragment {
                 if (response.isSuccessful() && response.body() != null) {
                     populateListView(response.body());
                 } else {
-                    Toast.makeText(getContext(), "Failed to load inquiries: " + response.message(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(
+                            getContext(),
+                            "Failed to load inquiries: " + response.message(),
+                            Toast.LENGTH_LONG
+                    ).show();
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<List<Inquiry>> call, @NonNull Throwable t) {
-                Toast.makeText(getContext(), "Failed to load inquiries", Toast.LENGTH_LONG).show();
+                Toast.makeText(
+                        getContext(),
+                        "Failed to load inquiries",
+                        Toast.LENGTH_LONG
+                ).show();
             }
         });
     }
 
     private void populateListView(List<Inquiry> inquiryList) {
-        InquiryAdapter inquiryAdapter = new InquiryAdapter(inquiryList, getContext()); // `getContext()` gets the Fragment context
+        InquiryAdapter inquiryAdapter = new InquiryAdapter(inquiryList, getContext());
         recyclerView.setAdapter(inquiryAdapter);
     }
 }

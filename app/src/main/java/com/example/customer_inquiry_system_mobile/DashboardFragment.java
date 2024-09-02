@@ -42,6 +42,7 @@ public class DashboardFragment extends Fragment {
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -58,7 +59,12 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_dashboard, container, false);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(
+                R.layout.fragment_dashboard,
+                container,
+                false
+        );
+
         return rootView;
     }
 }

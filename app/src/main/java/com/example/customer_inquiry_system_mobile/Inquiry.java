@@ -10,19 +10,15 @@ public class Inquiry {
 
     @SerializedName("progress")
     @Expose
-    String progress;  //진행현황 e.g. 접수 -> 1차검토 -> ..
-
-//    @SerializedName("productType")
-//    @Expose
-//    String productType; //제품구분 e.g. 자동차, 열연, ..
+    String progress;
 
     @SerializedName("inquiryType")
     @Expose
-    String inquiryType; //유형 e.g 품질문의, 공통(견적/품질문의)
+    String inquiryType;
 
     @SerializedName("customerName")
     @Expose
-    String customerName;  //고객사명 e.g. AAT
+    String customerName;
 
     public Long getInquiryId() {
         return inquiryId;

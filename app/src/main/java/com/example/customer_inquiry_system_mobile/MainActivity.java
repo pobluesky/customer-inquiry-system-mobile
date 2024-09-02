@@ -13,8 +13,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     private final FragmentManager fragmentManager = getSupportFragmentManager();
+
     private final ListFragment fragmentList = new ListFragment();
+
     private final QuestionFragment fragmentQuestion = new QuestionFragment();
+
     private final DashboardFragment fragmentDashboard = new DashboardFragment();
 
     @Override
@@ -35,12 +38,16 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction transaction = fragmentManager.beginTransaction();
 
             int itemId = menuItem.getItemId();
+
             if (itemId == R.id.fragment_list) {
-                transaction.replace(R.id.menu_frame_layout, fragmentList).commitAllowingStateLoss();
+                transaction.replace(R.id.menu_frame_layout, fragmentList)
+                        .commitAllowingStateLoss();
             } else if (itemId == R.id.fragment_question) {
-                transaction.replace(R.id.menu_frame_layout, fragmentQuestion).commitAllowingStateLoss();
+                transaction.replace(R.id.menu_frame_layout, fragmentQuestion)
+                        .commitAllowingStateLoss();
             } else if (itemId == R.id.fragment_dashboard) {
-                transaction.replace(R.id.menu_frame_layout, fragmentDashboard).commitAllowingStateLoss();
+                transaction.replace(R.id.menu_frame_layout, fragmentDashboard)
+                        .commitAllowingStateLoss();
             }
 
             return true;

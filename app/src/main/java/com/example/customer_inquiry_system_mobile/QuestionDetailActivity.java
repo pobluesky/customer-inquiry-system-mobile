@@ -25,7 +25,6 @@ public class QuestionDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_detail);
 
-        // 뷰 초기화
         type = findViewById(R.id.questionTypeDetail);
         status = findViewById(R.id.statusDetail);
         title = findViewById(R.id.titleDetail);
@@ -35,7 +34,11 @@ public class QuestionDetailActivity extends AppCompatActivity {
         if (questionId != -1) {
             fetchQuestionById(questionId);
         } else {
-            Toast.makeText(this, "유효하지 않은 문의 ID입니다.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(
+                    this,
+                    "유효하지 않은 문의 ID입니다.",
+                    Toast.LENGTH_SHORT
+            ).show();
         }
     }
 
@@ -48,18 +51,26 @@ public class QuestionDetailActivity extends AppCompatActivity {
             public void onResponse(@NonNull Call<Question> call, @NonNull Response<Question> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     Question question = response.body();
-                    // 데이터를 뷰에 설정
+
                     type.setText(question.getType());
                     status.setText(question.getStatus());
                     title.setText(question.getTitle());
                 } else {
-                    Toast.makeText(QuestionDetailActivity.this, "데이터를 가져오는 데 실패했습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(
+                            QuestionDetailActivity.this,
+                            "데이터를 가져오는 데 실패했습니다.",
+                            Toast.LENGTH_SHORT
+                    ).show();
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<Question> call, @NonNull Throwable t) {
-                Toast.makeText(QuestionDetailActivity.this, "API 호출 실패: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(
+                        QuestionDetailActivity.this,
+                        "API 호출 실패: " + t.getMessage(),
+                        Toast.LENGTH_SHORT
+                ).show();
             }
         });
     }

@@ -1,7 +1,6 @@
 package com.example.customer_inquiry_system_mobile;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,7 +34,11 @@ public class InquiryDetailActivity extends AppCompatActivity {
         if (inquiryId != -1) {
             fetchInquiryById(inquiryId);
         } else {
-            Toast.makeText(this, "유효하지 않은 문의 ID입니다.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(
+                    this,
+                    "유효하지 않은 문의 ID입니다.",
+                    Toast.LENGTH_SHORT
+            ).show();
         }
     }
 
@@ -53,14 +56,21 @@ public class InquiryDetailActivity extends AppCompatActivity {
                     progress.setText(inquiry.getProgress());
                     customerName.setText(inquiry.getCustomerName());
                 } else {
-                    Toast.makeText(InquiryDetailActivity.this, "데이터를 가져오는 데 실패했습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(
+                            InquiryDetailActivity.this,
+                            "데이터를 가져오는 데 실패했습니다.",
+                            Toast.LENGTH_SHORT
+                    ).show();
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<Inquiry> call, @NonNull Throwable t) {
-                Log.e("InquiryDetailActivity", "API 호출 실패: " + t.getMessage(), t);
-                Toast.makeText(InquiryDetailActivity.this, "API 호출 실패: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(
+                        InquiryDetailActivity.this,
+                        "API 호출 실패: " + t.getMessage(),
+                        Toast.LENGTH_SHORT
+                ).show();
             }
         });
     }

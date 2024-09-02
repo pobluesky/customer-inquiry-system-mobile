@@ -26,7 +26,6 @@ public class InquiryListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inquiry_list);
 
-        // 기본적인 recyclerview 설정
         recyclerView = findViewById(R.id.inquiryList_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -45,14 +44,17 @@ public class InquiryListActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<List<Inquiry>> call, Throwable t) {
-                        Toast.makeText(InquiryListActivity.this, "Failed to load inquiries", Toast.LENGTH_LONG).show();
+                        Toast.makeText(
+                                InquiryListActivity.this,
+                                "Failed to load inquiries",
+                                Toast.LENGTH_LONG
+                        ).show();
                     }
                 });
     }
 
     private void populateListView(List<Inquiry> inquiryList) {
-        InquiryAdapter inquiryAdapter = new InquiryAdapter(inquiryList, this); // `this` refers to the Activity context
+        InquiryAdapter inquiryAdapter = new InquiryAdapter(inquiryList, this);
         recyclerView.setAdapter(inquiryAdapter);
     }
-
 }
