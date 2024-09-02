@@ -8,17 +8,13 @@ public class Inquiry {
     @Expose
     Long inquiryId;
 
-    @SerializedName("salesPerson")
-    @Expose
-    String salesPerson; //판매 계약자 e.g. 현대종합상사(주)
-
     @SerializedName("progress")
     @Expose
     String progress;  //진행현황 e.g. 접수 -> 1차검토 -> ..
 
-    @SerializedName("productType")
-    @Expose
-    String productType; //제품구분 e.g. 자동차, 열연, ..
+//    @SerializedName("productType")
+//    @Expose
+//    String productType; //제품구분 e.g. 자동차, 열연, ..
 
     @SerializedName("inquiryType")
     @Expose
@@ -28,23 +24,19 @@ public class Inquiry {
     @Expose
     String customerName;  //고객사명 e.g. AAT
 
-    @SerializedName("industry")
-    @Expose
-    String industry; //산업 분류 e.g. AUTOMOBILE
-
-    @SerializedName("salesManagerName")
-    @Expose
-    String salesManagerName;
-
-    @SerializedName("qualityManagerName")
-    @Expose
-    String qualityManagerName;
-
     public Long getInquiryId() {
         return inquiryId;
     }
 
-    public String getSalesPerson() {
-        return salesPerson;
+    public String getInquiryType() {
+        return inquiryType;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public String getProgress() {
+        return progress;
     }
 }
