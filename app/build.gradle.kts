@@ -45,5 +45,9 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation ("androidx.recyclerview:recyclerview:1.3.1")
     implementation ("com.squareup.retrofit2:retrofit:2.9.0") // retrofit2
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0") // Gson 변환기
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0") // Gson
+    implementation ("com.google.code.gson:gson:2.8.8")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.1")
+    implementation ("com.google.android.material:material:1.4.0")
+
 }
