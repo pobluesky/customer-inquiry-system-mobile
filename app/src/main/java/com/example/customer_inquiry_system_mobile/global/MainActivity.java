@@ -1,4 +1,4 @@
-package com.example.customer_inquiry_system_mobile;
+package com.example.customer_inquiry_system_mobile.global;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -8,6 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.customer_inquiry_system_mobile.R;
+import com.example.customer_inquiry_system_mobile.domain.dashboard.fragment.DashboardFragment;
+import com.example.customer_inquiry_system_mobile.domain.dashboard.fragment.QuestionFragment;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.fragment.ListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

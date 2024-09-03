@@ -1,4 +1,4 @@
-package com.example.customer_inquiry_system_mobile;
+package com.example.customer_inquiry_system_mobile.domain.inquiry.fragment;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -8,8 +8,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.customer_inquiry_system_mobile.retrofit.InquiryAPI;
-import com.example.customer_inquiry_system_mobile.retrofit.RetrofitService;
+import com.example.customer_inquiry_system_mobile.R;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.Inquiry;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.api.InquiryAPI;
+import com.example.customer_inquiry_system_mobile.global.RetrofitService;
 
 import retrofit2.Call;
 import retrofit2.Callback;

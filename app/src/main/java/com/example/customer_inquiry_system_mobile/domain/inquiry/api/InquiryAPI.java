@@ -1,6 +1,6 @@
-package com.example.customer_inquiry_system_mobile.retrofit;
+package com.example.customer_inquiry_system_mobile.domain.inquiry.api;
 
-import com.example.customer_inquiry_system_mobile.Inquiry;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.Inquiry;
 
 import java.util.List;
 

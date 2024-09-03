@@ -1,4 +1,4 @@
-package com.example.customer_inquiry_system_mobile.retrofit;
+package com.example.customer_inquiry_system_mobile.global;
 
 import com.google.gson.Gson;
 

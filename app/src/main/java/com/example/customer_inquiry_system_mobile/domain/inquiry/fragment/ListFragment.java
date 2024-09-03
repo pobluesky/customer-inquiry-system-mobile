@@ -1,4 +1,4 @@
-package com.example.customer_inquiry_system_mobile;
+package com.example.customer_inquiry_system_mobile.domain.inquiry.fragment;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -12,9 +12,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.customer_inquiry_system_mobile.adapter.InquiryAdapter;
-import com.example.customer_inquiry_system_mobile.retrofit.InquiryAPI;
-import com.example.customer_inquiry_system_mobile.retrofit.RetrofitService;
+import com.example.customer_inquiry_system_mobile.R;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.adapter.InquiryAdapter;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.Inquiry;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.api.InquiryAPI;
+import com.example.customer_inquiry_system_mobile.global.RetrofitService;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.customer_inquiry_system_mobile.adapter;
+package com.example.customer_inquiry_system_mobile.domain.inquiry.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.customer_inquiry_system_mobile.Inquiry;
-import com.example.customer_inquiry_system_mobile.InquiryDetailActivity;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.Inquiry;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.fragment.InquiryDetailActivity;
 import com.example.customer_inquiry_system_mobile.R;
 
 import java.util.List;

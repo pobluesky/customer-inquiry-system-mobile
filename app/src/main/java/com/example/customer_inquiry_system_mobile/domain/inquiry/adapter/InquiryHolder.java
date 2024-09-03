@@ -1,4 +1,4 @@
-package com.example.customer_inquiry_system_mobile.adapter;
+package com.example.customer_inquiry_system_mobile.domain.inquiry.adapter;
 
 import android.view.View;
 import android.widget.TextView;
