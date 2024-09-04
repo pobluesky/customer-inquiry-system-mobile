@@ -38,6 +38,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionHolder> {
     @Override
     public void onBindViewHolder(@NonNull QuestionHolder holder, int position) {
         QuestionResponseDTO questionResponseDTO = questionResponseDTOList.get(position);
+
         holder.type.setText(questionResponseDTO.getType());
         holder.title.setText(questionResponseDTO.getTitle());
         holder.status.setText(questionResponseDTO.getStatus());

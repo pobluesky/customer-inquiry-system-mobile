@@ -54,7 +54,10 @@ public class ListFragment extends Fragment {
 
         inquiryAPI.getAllInquiries().enqueue(new Callback<List<InquiryResponseDTO>>() {
             @Override
-            public void onResponse(@NonNull Call<List<InquiryResponseDTO>> call, @NonNull Response<List<InquiryResponseDTO>> response) {
+            public void onResponse(
+                    @NonNull Call<List<InquiryResponseDTO>> call,
+                    @NonNull Response<List<InquiryResponseDTO>> response
+            ) {
                 if (response.isSuccessful() && response.body() != null) {
                     populateListView(response.body());
                 } else {

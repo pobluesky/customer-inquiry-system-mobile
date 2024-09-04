@@ -50,7 +50,10 @@ public class InquiryDetailActivity extends AppCompatActivity {
 
         inquiryAPI.getInquiryById(inquiryId).enqueue(new Callback<InquiryResponseDTO>() {
             @Override
-            public void onResponse(@NonNull Call<InquiryResponseDTO> call, @NonNull Response<InquiryResponseDTO> response) {
+            public void onResponse(
+                    @NonNull Call<InquiryResponseDTO> call,
+                    @NonNull Response<InquiryResponseDTO> response
+            ) {
                 if (response.isSuccessful() && response.body() != null) {
                     InquiryResponseDTO inquiryResponseDTO = response.body();
                     // 데이터를 뷰에 설정

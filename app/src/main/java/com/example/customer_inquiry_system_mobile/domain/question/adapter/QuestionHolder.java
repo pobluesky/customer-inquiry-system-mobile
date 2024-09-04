@@ -14,6 +14,7 @@ public class QuestionHolder extends RecyclerView.ViewHolder {
 
     public QuestionHolder(@NonNull View itemView){
         super(itemView);
+
         title=itemView.findViewById(R.id.questionListItem_title);
         status=itemView.findViewById(R.id.questionListItem_status);
         type=itemView.findViewById(R.id.questionListItem_type);

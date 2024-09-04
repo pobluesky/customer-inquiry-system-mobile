@@ -39,7 +39,11 @@ public class QuestionFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_question, container,false);
+        View rootView = inflater.inflate(
+                R.layout.fragment_question,
+                container,
+                false
+        );
 
         recyclerView = rootView.findViewById(R.id.questionList_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -55,7 +59,10 @@ public class QuestionFragment extends Fragment {
 
         questionAPI.getAllQuestions().enqueue(new Callback<List<QuestionResponseDTO>>() {
             @Override
-            public void onResponse(@NonNull Call<List<QuestionResponseDTO>> call, @NonNull Response<List<QuestionResponseDTO>> response) {
+            public void onResponse(
+                    @NonNull Call<List<QuestionResponseDTO>> call,
+                    @NonNull Response<List<QuestionResponseDTO>> response
+            ) {
                 if (response.isSuccessful() && response.body() != null) {
                     populateListView(response.body());
                 } else {
@@ -68,7 +75,10 @@ public class QuestionFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(@NonNull Call<List<QuestionResponseDTO>> call, @NonNull Throwable t) {
+            public void onFailure(
+                    @NonNull Call<List<QuestionResponseDTO>> call,
+                    @NonNull Throwable t
+            ) {
                 Toast.makeText(
                         getContext(),
                         "Failed to load questions",

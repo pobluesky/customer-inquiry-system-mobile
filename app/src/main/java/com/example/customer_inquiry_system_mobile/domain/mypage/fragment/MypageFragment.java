@@ -1,7 +1,6 @@
 package com.example.customer_inquiry_system_mobile.domain.mypage.fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +41,11 @@ public class MypageFragment extends Fragment {
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
     ) {
-        View view = inflater.inflate(R.layout.fragment_mypage, container, false);
+        View view = inflater.inflate(
+                R.layout.fragment_mypage,
+                container,
+                false
+        );
 
         RetrofitService retrofitService = new RetrofitService();
         userApi = retrofitService.getRetrofit().create(UserApi.class);
@@ -55,6 +58,7 @@ public class MypageFragment extends Fragment {
         textViewDepartment = view.findViewById(R.id.textViewDepartmentValue);
 
         Bundle arguments = getArguments();
+
         if (arguments != null) {
             String token = arguments.getString("token");
             Long userId = arguments.getLong("userId", -1);
@@ -82,6 +86,7 @@ public class MypageFragment extends Fragment {
 
     private void fetchUserInfo(String token, Long userId) {
         Call<UserInfoResponseDTO> call = userApi.getUserInfo(token, userId);
+
         call.enqueue(new Callback<UserInfoResponseDTO>() {
             @Override
             public void onResponse(
@@ -108,7 +113,6 @@ public class MypageFragment extends Fragment {
                                 Toast.LENGTH_SHORT
                         ).show();
                     } catch (IOException e) {
-                        Log.e("UserInfoResponseDTO", "Error parsing error body", e);
                         Toast.makeText(
                                 getActivity(),
                                 "오류 발생: " + e.getMessage(),

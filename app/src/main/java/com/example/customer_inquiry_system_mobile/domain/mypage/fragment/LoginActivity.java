@@ -69,11 +69,11 @@ public class LoginActivity extends AppCompatActivity {
 
                     SharedPreferences prefs = getSharedPreferences("my_prefs", MODE_PRIVATE);
                     SharedPreferences.Editor editor = prefs.edit();
+
                     editor.putString("token", accessToken);
                     editor.putLong("userId", userId);
                     editor.apply();
 
-                    // MainActivity로 이동
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
@@ -96,5 +96,4 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
 }

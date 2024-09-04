@@ -18,6 +18,7 @@ import java.util.List;
 public class InquiryAdapter extends RecyclerView.Adapter<InquiryHolder> {
 
     private final List<InquiryResponseDTO> inquiryResponseDTOList;
+
     private final Context context;
 
     public InquiryAdapter(List<InquiryResponseDTO> inquiryResponseDTOList, Context context) {
@@ -35,7 +36,8 @@ public class InquiryAdapter extends RecyclerView.Adapter<InquiryHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull InquiryHolder holder, int position) {
-        InquiryResponseDTO inquiryResponseDTO = inquiryResponseDTOList.get(position); //
+        InquiryResponseDTO inquiryResponseDTO = inquiryResponseDTOList.get(position);
+
         holder.inquiryType.setText(inquiryResponseDTO.getInquiryType());
         holder.progress.setText(inquiryResponseDTO.getProgress());
         holder.customerName.setText(inquiryResponseDTO.getCustomerName());

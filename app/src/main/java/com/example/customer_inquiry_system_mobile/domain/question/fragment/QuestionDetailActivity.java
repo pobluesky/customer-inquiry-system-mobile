@@ -50,7 +50,10 @@ public class QuestionDetailActivity extends AppCompatActivity {
 
         questionAPI.getQuestionById(questionId).enqueue(new Callback<QuestionResponseDTO>() {
             @Override
-            public void onResponse(@NonNull Call<QuestionResponseDTO> call, @NonNull Response<QuestionResponseDTO> response) {
+            public void onResponse(
+                    @NonNull Call<QuestionResponseDTO> call,
+                    @NonNull Response<QuestionResponseDTO> response
+            ) {
                 if (response.isSuccessful() && response.body() != null) {
                     QuestionResponseDTO questionResponseDTO = response.body();
 

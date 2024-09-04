@@ -21,8 +21,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     private final FragmentManager fragmentManager = getSupportFragmentManager();
+
     private final ListFragment fragmentList = new ListFragment();
+
     private final QuestionFragment fragmentQuestion = new QuestionFragment();
+
     private final DashboardFragment fragmentDashboard = new DashboardFragment();
 
     @Override
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             Fragment selectedFragment = null;
 
             int itemId = menuItem.getItemId();
+
             if (itemId == R.id.fragment_list) {
                 selectedFragment = fragmentList;
             } else if (itemId == R.id.fragment_question) {
@@ -51,23 +55,25 @@ public class MainActivity extends AppCompatActivity {
             } else if (itemId == R.id.fragment_dashboard) {
                 selectedFragment = fragmentDashboard;
             } else if (itemId == R.id.fragment_mypage) {
-                // MypageFragment 생성 및 Bundle 설정
                 MypageFragment fragmentMypage = new MypageFragment();
                 Bundle bundle = new Bundle();
 
-                // SharedPreferences에서 데이터 가져오기
                 SharedPreferences prefs = getSharedPreferences("my_prefs", MODE_PRIVATE);
+
                 String token = prefs.getString("token", null);
                 Long userId = prefs.getLong("userId", -1);
 
-                // 데이터가 유효한 경우에만 설정
                 if (token != null && userId != -1) {
                     bundle.putString("token", token);
                     bundle.putLong("userId", userId);
+
                     fragmentMypage.setArguments(bundle);
                 } else {
-                    // 데이터가 유효하지 않은 경우 처리
-                    Toast.makeText(MainActivity.this, "사용자 정보가 유효하지 않습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(
+                            MainActivity.this,
+                            "사용자 정보가 유효하지 않습니다.",
+                            Toast.LENGTH_SHORT
+                    ).show();
                 }
 
                 selectedFragment = fragmentMypage;

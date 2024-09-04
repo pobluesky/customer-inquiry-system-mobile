@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class QuestionResponseDTO {
+
     @SerializedName("questionId")
     @Expose
     Long questionId;
