@@ -43,7 +43,6 @@ public class InquiryDetailActivity extends AppCompatActivity {
             customerRequestDateDetail,
             additionalRequestsDetail,
             fileNameDetail,
-            filePathDetail,
             responseDeadlineDetail;
 
     private RecyclerView recyclerViewLineItems;
@@ -71,7 +70,6 @@ public class InquiryDetailActivity extends AppCompatActivity {
         customerRequestDateDetail = findViewById(R.id.customerRequestDateDetail);
         additionalRequestsDetail = findViewById(R.id.additionalRequestsDetail);
         fileNameDetail = findViewById(R.id.fileNameDetail);
-        filePathDetail = findViewById(R.id.filePathDetail);
         responseDeadlineDetail = findViewById(R.id.responseDeadlineDetail);
 
         recyclerViewLineItems = findViewById(R.id.recyclerViewLineItems);
@@ -120,7 +118,6 @@ public class InquiryDetailActivity extends AppCompatActivity {
                     customerRequestDateDetail.setText(inquiryResponseDTO.getCustomerRequestDate());
                     additionalRequestsDetail.setText(inquiryResponseDTO.getAdditionalRequests());
                     fileNameDetail.setText(inquiryResponseDTO.getFileName());
-                    filePathDetail.setText(inquiryResponseDTO.getFilePath());
                     responseDeadlineDetail.setText(inquiryResponseDTO.getResponseDeadline());
 
                     // LineItem 데이터 바인딩

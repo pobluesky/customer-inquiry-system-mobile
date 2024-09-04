@@ -383,28 +383,6 @@
                 android:text="파일 이름" />
         </LinearLayout>
 
-        <!-- 파일 경로 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-
-            <TextView
-                android:id="@+id/filePathLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="파일 경로:"
-                android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
-
-            <TextView
-                android:id="@+id/filePathDetail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="파일 경로" />
-        </LinearLayout>
-
         <!-- 응답 마감일 -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -426,13 +404,13 @@
                 android:layout_height="wrap_content"
                 android:text="응답 마감일" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
 
-            <!-- 상위 컬럼 (헤더) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -441,130 +419,151 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- 상위 컬럼 (헤더) -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="50dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Line Item ID"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="no"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Lab"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="가능소"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Kind"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="품종"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Standard Org"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="규격기관"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Annual Cost"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="연소요량"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Sales Vehicle Name"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="판매차종명"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Part Name"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="부품명"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="IX Plate"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="내외판"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Thickness"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="두께"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Width"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="폭"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Quantity"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="수량"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Expected Delivery Date"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="희망납기일"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Transportation Destination"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="운송목적지"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Edge"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="주문"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
+                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="Tolerance"
-                        android:textColor="@android:color/black"
                         android:padding="8dp"
-                        android:textStyle="bold"/>
+                        android:text="공차"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
-            </HorizontalScrollView>
+
 
             <!-- RecyclerView (데이터 항목) -->
             <androidx.recyclerview.widget.RecyclerView
@@ -573,7 +572,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:padding="8dp"/>
-
         </LinearLayout>
+            </HorizontalScrollView>
+    </LinearLayout>
     </LinearLayout>
 </ScrollView>
