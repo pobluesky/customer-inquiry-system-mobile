@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.customer_inquiry_system_mobile.R;
-import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquiryResponseDTO;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquirySummaryResponseDTO;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.api.InquiryAPI;
 import com.example.customer_inquiry_system_mobile.global.RetrofitService;
 
@@ -48,18 +48,18 @@ public class InquiryDetailActivity extends AppCompatActivity {
         RetrofitService retrofitService = new RetrofitService();
         InquiryAPI inquiryAPI = retrofitService.getRetrofit().create(InquiryAPI.class);
 
-        inquiryAPI.getInquiryById(inquiryId).enqueue(new Callback<InquiryResponseDTO>() {
+        inquiryAPI.getInquiryById(inquiryId).enqueue(new Callback<InquirySummaryResponseDTO>() {
             @Override
             public void onResponse(
-                    @NonNull Call<InquiryResponseDTO> call,
-                    @NonNull Response<InquiryResponseDTO> response
+                    @NonNull Call<InquirySummaryResponseDTO> call,
+                    @NonNull Response<InquirySummaryResponseDTO> response
             ) {
                 if (response.isSuccessful() && response.body() != null) {
-                    InquiryResponseDTO inquiryResponseDTO = response.body();
+                    InquirySummaryResponseDTO inquirySummaryResponseDTO = response.body();
                     // 데이터를 뷰에 설정
-                    inquiryType.setText(inquiryResponseDTO.getInquiryType());
-                    progress.setText(inquiryResponseDTO.getProgress());
-                    customerName.setText(inquiryResponseDTO.getCustomerName());
+                    inquiryType.setText(inquirySummaryResponseDTO.getInquiryType());
+                    progress.setText(inquirySummaryResponseDTO.getProgress());
+                    customerName.setText(inquirySummaryResponseDTO.getCustomerName());
                 } else {
                     Toast.makeText(
                             InquiryDetailActivity.this,
@@ -70,7 +70,7 @@ public class InquiryDetailActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(@NonNull Call<InquiryResponseDTO> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<InquirySummaryResponseDTO> call, @NonNull Throwable t) {
                 Toast.makeText(
                         InquiryDetailActivity.this,
                         "API 호출 실패: " + t.getMessage(),

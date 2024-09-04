@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquiryResponseDTO;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquirySummaryResponseDTO;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.fragment.InquiryDetailActivity;
 import com.example.customer_inquiry_system_mobile.R;
 
@@ -17,12 +17,12 @@ import java.util.List;
 
 public class InquiryAdapter extends RecyclerView.Adapter<InquiryHolder> {
 
-    private final List<InquiryResponseDTO> inquiryResponseDTOList;
+    private final List<InquirySummaryResponseDTO> inquirySummaryResponseDTOList;
 
     private final Context context;
 
-    public InquiryAdapter(List<InquiryResponseDTO> inquiryResponseDTOList, Context context) {
-        this.inquiryResponseDTOList = inquiryResponseDTOList;
+    public InquiryAdapter(List<InquirySummaryResponseDTO> inquirySummaryResponseDTOList, Context context) {
+        this.inquirySummaryResponseDTOList = inquirySummaryResponseDTOList;
         this.context = context;
     }
 
@@ -36,22 +36,22 @@ public class InquiryAdapter extends RecyclerView.Adapter<InquiryHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull InquiryHolder holder, int position) {
-        InquiryResponseDTO inquiryResponseDTO = inquiryResponseDTOList.get(position);
+        InquirySummaryResponseDTO inquirySummaryResponseDTO = inquirySummaryResponseDTOList.get(position);
 
-        holder.inquiryType.setText(inquiryResponseDTO.getInquiryType());
-        holder.progress.setText(inquiryResponseDTO.getProgress());
-        holder.customerName.setText(inquiryResponseDTO.getCustomerName());
+        holder.inquiryType.setText(inquirySummaryResponseDTO.getInquiryType());
+        holder.progress.setText(inquirySummaryResponseDTO.getProgress());
+        holder.customerName.setText(inquirySummaryResponseDTO.getCustomerName());
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, InquiryDetailActivity.class);
 
-            intent.putExtra("inquiry_id", inquiryResponseDTO.getInquiryId());
+            intent.putExtra("inquiry_id", inquirySummaryResponseDTO.getInquiryId());
             context.startActivity(intent);
         });
     }
 
     @Override
     public int getItemCount() {
-        return inquiryResponseDTOList.size();
+        return inquirySummaryResponseDTOList.size();
     }
 }

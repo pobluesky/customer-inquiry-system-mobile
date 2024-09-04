@@ -30,7 +30,11 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionHolder> {
     @Override
     public QuestionHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_question_item, parent, false);
+                .inflate(
+                        R.layout.list_question_item,
+                        parent,
+                        false
+                );
 
         return new QuestionHolder(view);
     }

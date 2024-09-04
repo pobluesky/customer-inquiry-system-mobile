@@ -28,26 +28,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:layout_marginEnd="4dp"
         android:fontFamily="@font/regular"
         android:gravity="center_vertical"
-        android:text="/questionListItem_title"
+        android:text="title"
         android:textSize="16sp"
+        android:maxEms="6"
+        android:ellipsize="end"
+        android:singleLine="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/questionListItem_status"
+        app:layout_constraintStart_toEndOf="@+id/questionListItem_type"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/questionListItem_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="132dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/regular"
         android:gravity="center_vertical"
-        android:text="questionListItem_status"
+        android:text="status"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
