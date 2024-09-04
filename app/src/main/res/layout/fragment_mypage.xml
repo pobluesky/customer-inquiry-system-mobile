@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="#F2F7FF"
+    android:gravity="center_horizontal"> <!-- Center content horizontally -->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="40dp"
+        app:srcCompat="@drawable/logo1" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/regular"
+        android:text="My Page"
+        android:textColor="@color/black"
+        android:layout_marginBottom="30dp"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="319dp"
+        android:layout_height="334dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_border"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp"> <!-- Center content horizontally -->
+
+        <!-- Row for Name -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="이름 :"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewNameValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="이름 값"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Row for Email -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewEmailLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="이메일 :"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewEmailValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="이메일 값"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Row for Phone -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewPhoneLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="연락처 :"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewPhoneValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="연락처 값"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Row for Employee Number -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewEmpNoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="사번 :"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewEmpNoValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="사번 값"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Row for Role -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewRoleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="권한 :"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewRoleValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="권한 값"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Row for Department -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewDepartmentLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="부서 :"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewDepartmentValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="부서 값"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

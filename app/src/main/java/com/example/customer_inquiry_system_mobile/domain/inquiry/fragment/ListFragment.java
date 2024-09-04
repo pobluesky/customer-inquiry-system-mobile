@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.customer_inquiry_system_mobile.R;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.adapter.InquiryAdapter;
-import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.Inquiry;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquiryResponseDTO;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.api.InquiryAPI;
 import com.example.customer_inquiry_system_mobile.global.RetrofitService;
 
@@ -52,9 +52,9 @@ public class ListFragment extends Fragment {
         RetrofitService retrofitService = new RetrofitService();
         InquiryAPI inquiryAPI = retrofitService.getRetrofit().create(InquiryAPI.class);
 
-        inquiryAPI.getAllInquiries().enqueue(new Callback<List<Inquiry>>() {
+        inquiryAPI.getAllInquiries().enqueue(new Callback<List<InquiryResponseDTO>>() {
             @Override
-            public void onResponse(@NonNull Call<List<Inquiry>> call, @NonNull Response<List<Inquiry>> response) {
+            public void onResponse(@NonNull Call<List<InquiryResponseDTO>> call, @NonNull Response<List<InquiryResponseDTO>> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     populateListView(response.body());
                 } else {
@@ -67,7 +67,7 @@ public class ListFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(@NonNull Call<List<Inquiry>> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<List<InquiryResponseDTO>> call, @NonNull Throwable t) {
                 Toast.makeText(
                         getContext(),
                         "Failed to load inquiries",
@@ -77,8 +77,8 @@ public class ListFragment extends Fragment {
         });
     }
 
-    private void populateListView(List<Inquiry> inquiryList) {
-        InquiryAdapter inquiryAdapter = new InquiryAdapter(inquiryList, getContext());
+    private void populateListView(List<InquiryResponseDTO> inquiryResponseDTOList) {
+        InquiryAdapter inquiryAdapter = new InquiryAdapter(inquiryResponseDTOList, getContext());
         recyclerView.setAdapter(inquiryAdapter);
     }
 }
