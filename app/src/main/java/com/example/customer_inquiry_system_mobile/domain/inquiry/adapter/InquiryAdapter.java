@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquiryResponseDTO;
-import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquirySummaryResponseDTO;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.fragment.InquiryDetailActivity;
 import com.example.customer_inquiry_system_mobile.R;
 

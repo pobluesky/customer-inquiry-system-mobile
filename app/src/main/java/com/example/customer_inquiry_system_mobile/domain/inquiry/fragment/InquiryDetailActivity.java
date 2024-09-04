@@ -46,6 +46,7 @@ public class InquiryDetailActivity extends AppCompatActivity {
             responseDeadlineDetail;
 
     private RecyclerView recyclerViewLineItems;
+
     private LineItemAdapter lineItemAdapter;
 
     @Override
@@ -120,7 +121,6 @@ public class InquiryDetailActivity extends AppCompatActivity {
                     fileNameDetail.setText(inquiryResponseDTO.getFileName());
                     responseDeadlineDetail.setText(inquiryResponseDTO.getResponseDeadline());
 
-                    // LineItem 데이터 바인딩
                     List<LineItemResponseDTO> lineItems = inquiryResponseDTO.getLineItemResponseDTOs();
                     lineItemAdapter = new LineItemAdapter(lineItems);
                     recyclerViewLineItems.setAdapter(lineItemAdapter);

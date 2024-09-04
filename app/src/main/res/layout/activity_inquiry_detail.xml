@@ -1,7 +1,14 @@
-<!-- res/layout/activity_inquiry_detail.xml -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <!-- ScrollView로 전체 컨텐츠를 감싸서 스크롤 가능하게 설정 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/menu_bottom_nav"
+        android:paddingBottom="56dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -9,386 +16,276 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- 문의 ID -->
-        <LinearLayout
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/logo1" />
+
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
+            android:stretchColumns="1"
+        android:padding="16dp">
 
+        <TableRow>
             <TextView
                 android:id="@+id/inquiryIdLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="문의 ID:"
+                android:text="문의 ID"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/inquiryIdDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ID" />
-        </LinearLayout>
-
-        <!-- 이름 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/nameLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="이름:"
+                android:text="이름"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/nameDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이름" />
-        </LinearLayout>
+        </TableRow>
 
-        <!-- 고객 이름 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-
+        <TableRow>
             <TextView
                 android:id="@+id/customerNameLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="고객 이름:"
+                android:text="고객 이름"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/customerNameDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="고객 이름" />
-        </LinearLayout>
-
-        <!-- 고객 코드 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/customerCodeLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="고객 코드:"
+                android:text="고객 코드"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/customerCodeDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="고객 코드" />
-        </LinearLayout>
+        </TableRow>
 
-        <!-- 이메일 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-
+        <TableRow>
             <TextView
                 android:id="@+id/emailLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="이메일:"
+                android:text="이메일"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/emailDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이메일" />
-        </LinearLayout>
-
-        <!-- 전화번호 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/phoneLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="전화번호:"
+                android:text="전화번호"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/phoneDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="전화번호" />
-        </LinearLayout>
+        </TableRow>
 
-        <!-- 국가 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-
+        <TableRow>
             <TextView
                 android:id="@+id/countryLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="국가:"
+                android:text="국가"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/countryDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="국가" />
-        </LinearLayout>
-
-        <!-- 기업 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/corporateLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="기업:"
+                android:text="기업"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/corporateDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="기업" />
-        </LinearLayout>
+        </TableRow>
 
-        <!-- 판매 담당자 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-
+        <TableRow>
             <TextView
                 android:id="@+id/salesPersonLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="판매 담당자:"
+                android:text="판매 담당자"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/salesPersonDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="판매 담당자" />
-        </LinearLayout>
-
-        <!-- 문의 타입 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/inquiryTypeLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="문의 타입:"
+                android:text="문의 타입"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/inquiryTypeDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="문의 타입" />
-        </LinearLayout>
+        </TableRow>
 
-        <!-- 산업 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-
+        <TableRow>
             <TextView
                 android:id="@+id/industryLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="산업:"
+                android:text="산업"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/industryDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="산업" />
-        </LinearLayout>
-
-        <!-- 법인 코드 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/corporationCodeLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="법인 코드:"
+                android:text="법인 코드"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/corporationCodeDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="법인 코드" />
-        </LinearLayout>
+        </TableRow>
 
         <!-- 제품 유형 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-
+        <TableRow>
             <TextView
                 android:id="@+id/productTypeLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="제품 유형:"
+                android:text="제품 유형"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/productTypeDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="제품 유형" />
-        </LinearLayout>
-
-        <!-- 진행 상황 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/progressLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="진행 상황:"
+                android:text="진행 상황"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/progressDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="진행 상황" />
-        </LinearLayout>
+        </TableRow>
 
         <!-- 고객 요청 날짜 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-
+        <TableRow>
             <TextView
                 android:id="@+id/customerRequestDateLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="고객 요청 날짜:"
+                android:text="고객 요청 날짜"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/customerRequestDateDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="고객 요청 날짜" />
-        </LinearLayout>
-
-        <!-- 추가 요청 사항 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/additionalRequestsLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="추가 요청 사항:"
+                android:text="추가 요청 사항"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/additionalRequestsDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="추가 요청 사항" />
-        </LinearLayout>
+        </TableRow>
 
         <!-- 파일 이름 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-
+        <TableRow>
             <TextView
                 android:id="@+id/fileNameLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="파일 이름:"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/fileNameDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="파일 이름" />
-        </LinearLayout>
-
-        <!-- 응답 마감일 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/responseDeadlineLabel"
@@ -396,14 +293,18 @@
                 android:layout_height="wrap_content"
                 android:text="응답 마감일:"
                 android:textStyle="bold"
-                android:layout_marginEnd="8dp" />
+                android:paddingEnd="8dp" />
 
             <TextView
                 android:id="@+id/responseDeadlineDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="응답 마감일" />
-        </LinearLayout>
+        </TableRow>
+
+    </TableLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -577,3 +478,12 @@
     </LinearLayout>
     </LinearLayout>
 </ScrollView>
+
+<com.google.android.material.bottomnavigation.BottomNavigationView
+android:id="@+id/menu_bottom_nav"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentBottom="true"
+app:labelVisibilityMode="labeled"
+app:menu="@menu/menu_bottom_nav" />
+    </RelativeLayout>

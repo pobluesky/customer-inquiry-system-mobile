@@ -1,7 +1,6 @@
 package com.example.customer_inquiry_system_mobile.domain.inquiry.api;
 
 import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquiryResponseDTO;
-import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquirySummaryResponseDTO;
 
 import java.util.List;
 

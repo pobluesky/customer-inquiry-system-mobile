@@ -18,18 +18,15 @@ public class RetrofitService {
     }
 
     private void initializeRetrofit() {
-        // HTTP 로깅 인터셉터 추가 (디버그 용도)
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-        // OkHttpClient 설정
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
                 .build();
 
-        // Retrofit 초기화
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8080/") // 로컬 호스트 주소 (에뮬레이터용)
+                .baseUrl("http://10.0.2.2:8080/")
                 .client(client) // OkHttpClient 추가
                 .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .build();
@@ -39,7 +36,6 @@ public class RetrofitService {
         return retrofit;
     }
 
-    // UserApiService 인스턴스를 제공하는 메서드 추가
     public UserApi getUserApi() {
         return retrofit.create(UserApi.class);
     }

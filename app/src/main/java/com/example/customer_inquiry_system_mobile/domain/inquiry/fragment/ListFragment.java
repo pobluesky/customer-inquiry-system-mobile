@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.customer_inquiry_system_mobile.R;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.adapter.InquiryAdapter;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquiryResponseDTO;
-import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquirySummaryResponseDTO;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.api.InquiryAPI;
 import com.example.customer_inquiry_system_mobile.global.RetrofitService;
 
@@ -37,9 +36,16 @@ public class ListFragment extends Fragment {
 
     @SuppressLint("MissingInflatedId")
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_list, container, false);
+    public View onCreateView(
+            @NonNull LayoutInflater inflater,
+            ViewGroup container,
+            Bundle savedInstanceState
+    ) {
+        View rootView = inflater.inflate(
+                R.layout.fragment_list,
+                container,
+                false
+        );
 
         recyclerView = rootView.findViewById(R.id.inquiryList_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
