@@ -7,11 +7,17 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.customer_inquiry_system_mobile.R;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.adapter.LineItemAdapter;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquiryResponseDTO;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.api.InquiryAPI;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.LineItemResponseDTO;
 import com.example.customer_inquiry_system_mobile.global.RetrofitService;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,6 +46,9 @@ public class InquiryDetailActivity extends AppCompatActivity {
             filePathDetail,
             responseDeadlineDetail;
 
+    private RecyclerView recyclerViewLineItems;
+    private LineItemAdapter lineItemAdapter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +73,9 @@ public class InquiryDetailActivity extends AppCompatActivity {
         fileNameDetail = findViewById(R.id.fileNameDetail);
         filePathDetail = findViewById(R.id.filePathDetail);
         responseDeadlineDetail = findViewById(R.id.responseDeadlineDetail);
+
+        recyclerViewLineItems = findViewById(R.id.recyclerViewLineItems);
+        recyclerViewLineItems.setLayoutManager(new LinearLayoutManager(this));
 
         Long inquiryId = getIntent().getLongExtra("inquiry_id", -1);
 
@@ -110,6 +122,11 @@ public class InquiryDetailActivity extends AppCompatActivity {
                     fileNameDetail.setText(inquiryResponseDTO.getFileName());
                     filePathDetail.setText(inquiryResponseDTO.getFilePath());
                     responseDeadlineDetail.setText(inquiryResponseDTO.getResponseDeadline());
+
+                    // LineItem 데이터 바인딩
+                    List<LineItemResponseDTO> lineItems = inquiryResponseDTO.getLineItemResponseDTOs();
+                    lineItemAdapter = new LineItemAdapter(lineItems);
+                    recyclerViewLineItems.setAdapter(lineItemAdapter);
                 } else {
                     Toast.makeText(
                             InquiryDetailActivity.this,
