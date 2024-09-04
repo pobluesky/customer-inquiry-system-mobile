@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.Inquiry;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquiryResponseDTO;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.fragment.InquiryDetailActivity;
 import com.example.customer_inquiry_system_mobile.R;
 
@@ -17,11 +17,11 @@ import java.util.List;
 
 public class InquiryAdapter extends RecyclerView.Adapter<InquiryHolder> {
 
-    private final List<Inquiry> inquiryList;
+    private final List<InquiryResponseDTO> inquiryResponseDTOList;
     private final Context context;
 
-    public InquiryAdapter(List<Inquiry> inquiryList, Context context) {
-        this.inquiryList = inquiryList;
+    public InquiryAdapter(List<InquiryResponseDTO> inquiryResponseDTOList, Context context) {
+        this.inquiryResponseDTOList = inquiryResponseDTOList;
         this.context = context;
     }
 
@@ -35,21 +35,21 @@ public class InquiryAdapter extends RecyclerView.Adapter<InquiryHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull InquiryHolder holder, int position) {
-        Inquiry inquiry=inquiryList.get(position); //
-        holder.inquiryType.setText(inquiry.getInquiryType());
-        holder.progress.setText(inquiry.getProgress());
-        holder.customerName.setText(inquiry.getCustomerName());
+        InquiryResponseDTO inquiryResponseDTO = inquiryResponseDTOList.get(position); //
+        holder.inquiryType.setText(inquiryResponseDTO.getInquiryType());
+        holder.progress.setText(inquiryResponseDTO.getProgress());
+        holder.customerName.setText(inquiryResponseDTO.getCustomerName());
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, InquiryDetailActivity.class);
 
-            intent.putExtra("inquiry_id", inquiry.getInquiryId());
+            intent.putExtra("inquiry_id", inquiryResponseDTO.getInquiryId());
             context.startActivity(intent);
         });
     }
 
     @Override
     public int getItemCount() {
-        return inquiryList.size();
+        return inquiryResponseDTOList.size();
     }
 }
