@@ -9,20 +9,20 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.customer_inquiry_system_mobile.domain.question.dto.Question;
-import com.example.customer_inquiry_system_mobile.domain.dashboard.fragment.QuestionDetailActivity;
+import com.example.customer_inquiry_system_mobile.domain.question.dto.QuestionResponseDTO;
+import com.example.customer_inquiry_system_mobile.domain.question.fragment.QuestionDetailActivity;
 import com.example.customer_inquiry_system_mobile.R;
 
 import java.util.List;
 
 public class QuestionAdapter extends RecyclerView.Adapter<QuestionHolder> {
 
-    private final List<Question> questionList;
+    private final List<QuestionResponseDTO> questionResponseDTOList;
 
     private final Context context;
 
-    public QuestionAdapter(List<Question> questionList, Context context) {
-        this.questionList = questionList;
+    public QuestionAdapter(List<QuestionResponseDTO> questionResponseDTOList, Context context) {
+        this.questionResponseDTOList = questionResponseDTOList;
         this.context = context;
     }
 
@@ -37,21 +37,21 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull QuestionHolder holder, int position) {
-        Question question=questionList.get(position);
-        holder.type.setText(question.getType());
-        holder.title.setText(question.getTitle());
-        holder.status.setText(question.getStatus());
+        QuestionResponseDTO questionResponseDTO = questionResponseDTOList.get(position);
+        holder.type.setText(questionResponseDTO.getType());
+        holder.title.setText(questionResponseDTO.getTitle());
+        holder.status.setText(questionResponseDTO.getStatus());
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, QuestionDetailActivity.class);
 
-            intent.putExtra("question_id", question.getQuestionId());
+            intent.putExtra("question_id", questionResponseDTO.getQuestionId());
             context.startActivity(intent);
         });
     }
 
     @Override
     public int getItemCount() {
-        return questionList.size();
+        return questionResponseDTOList.size();
     }
 }
