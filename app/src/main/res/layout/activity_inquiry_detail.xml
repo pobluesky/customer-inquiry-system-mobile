@@ -465,25 +465,24 @@
 
                 </LinearLayout>
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewLineItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:padding="8dp"/>
 
-            <!-- RecyclerView (데이터 항목) -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewLineItems"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:padding="8dp"/>
+                </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
         </LinearLayout>
-            </HorizontalScrollView>
-    </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
 
-<com.google.android.material.bottomnavigation.BottomNavigationView
-android:id="@+id/menu_bottom_nav"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:layout_alignParentBottom="true"
-app:labelVisibilityMode="labeled"
-app:menu="@menu/menu_bottom_nav" />
-    </RelativeLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/menu_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_bottom_nav" />
+</RelativeLayout>

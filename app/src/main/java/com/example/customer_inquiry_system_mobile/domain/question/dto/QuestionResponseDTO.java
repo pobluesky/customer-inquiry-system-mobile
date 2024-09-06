@@ -25,6 +25,10 @@ public class QuestionResponseDTO {
     @Expose
     String type;
 
+    @SerializedName("contents")
+    @Expose
+    String contents;
+
     public Long getQuestionId() {
         return questionId;
     }
@@ -36,4 +40,6 @@ public class QuestionResponseDTO {
     public String getStatus() { return status;}
 
     public String getType() { return type;}
+
+    public String getContents() { return contents;}
 }
