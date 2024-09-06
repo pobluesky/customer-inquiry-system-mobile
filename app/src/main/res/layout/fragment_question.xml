@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="15px"
     android:background="#F2F7FF"
-    tools:context=".domain.questionResponseDTO.fragment.QuestionFragment">
+    tools:context=".domain.question.fragment.QuestionFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

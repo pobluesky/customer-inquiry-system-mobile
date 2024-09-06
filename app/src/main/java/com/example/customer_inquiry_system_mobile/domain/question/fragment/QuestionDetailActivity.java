@@ -39,8 +39,8 @@ public class QuestionDetailActivity extends AppCompatActivity {
         Long questionId = getIntent().getLongExtra("question_id", -1);
 
         if (questionId != -1) {
-            fetchQuestionById(questionId);   // 기존 문의 데이터 가져오기
-            fetchAnswerByQuestionId(questionId);  // 추가된 답변 데이터 가져오기
+            fetchQuestionById(questionId);
+            fetchAnswerByQuestionId(questionId);
         } else {
             Toast.makeText(
                     this,
@@ -50,7 +50,6 @@ public class QuestionDetailActivity extends AppCompatActivity {
         }
     }
 
-    // 기존 Question API 호출 메서드
     private void fetchQuestionById(Long questionId) {
         RetrofitService retrofitService = new RetrofitService();
         QuestionAPI questionAPI = retrofitService.getRetrofit().create(QuestionAPI.class);
@@ -88,7 +87,6 @@ public class QuestionDetailActivity extends AppCompatActivity {
         });
     }
 
-    // 새로운 Answer API 호출 메서드 추가
     private void fetchAnswerByQuestionId(Long questionId) {
         RetrofitService retrofitService = new RetrofitService();
         AnswerAPI answerAPI = retrofitService.getRetrofit().create(AnswerAPI.class);
