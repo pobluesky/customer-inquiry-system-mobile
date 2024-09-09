@@ -1,6 +1,7 @@
 package com.example.customer_inquiry_system_mobile.domain.inquiry.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,10 +15,7 @@ import com.example.customer_inquiry_system_mobile.R;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.adapter.LineItemAdapter;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquiryResponseDTO;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.api.InquiryAPI;
-import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.LineItemResponseDTO;
 import com.example.customer_inquiry_system_mobile.global.RetrofitService;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,7 +44,6 @@ public class InquiryDetailActivity extends AppCompatActivity {
             responseDeadlineDetail;
 
     private RecyclerView recyclerViewLineItems;
-
     private LineItemAdapter lineItemAdapter;
 
     @Override
@@ -77,9 +74,10 @@ public class InquiryDetailActivity extends AppCompatActivity {
         recyclerViewLineItems.setLayoutManager(new LinearLayoutManager(this));
 
         Long inquiryId = getIntent().getLongExtra("inquiry_id", -1);
+        String productType = getIntent().getStringExtra("product_type");
 
         if (inquiryId != -1) {
-            fetchInquiryById(inquiryId);
+            fetchInquiryById(inquiryId, productType);
         } else {
             Toast.makeText(
                     this,
@@ -89,52 +87,30 @@ public class InquiryDetailActivity extends AppCompatActivity {
         }
     }
 
-    private void fetchInquiryById(Long inquiryId) {
-        RetrofitService retrofitService = new RetrofitService();
+    private void fetchInquiryById(Long inquiryId, String productType) {
+        RetrofitService retrofitService = new RetrofitService(productType);
         InquiryAPI inquiryAPI = retrofitService.getRetrofit().create(InquiryAPI.class);
 
         inquiryAPI.getInquiryById(inquiryId).enqueue(new Callback<InquiryResponseDTO>() {
             @Override
-            public void onResponse(
-                    @NonNull Call<InquiryResponseDTO> call,
-                    @NonNull Response<InquiryResponseDTO> response
-            ) {
+            public void onResponse(@NonNull Call<InquiryResponseDTO> call, @NonNull Response<InquiryResponseDTO> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     InquiryResponseDTO inquiryResponseDTO = response.body();
+                    String productType = inquiryResponseDTO.getProductType();
 
-                    inquiryIdDetail.setText(String.valueOf(inquiryResponseDTO.getInquiryId()));
-                    nameDetail.setText(inquiryResponseDTO.getName());
-                    customerNameDetail.setText(inquiryResponseDTO.getCustomerName());
-                    customerCodeDetail.setText(inquiryResponseDTO.getCustomerCode());
-                    emailDetail.setText(inquiryResponseDTO.getEmail());
-                    phoneDetail.setText(inquiryResponseDTO.getPhone());
-                    countryDetail.setText(inquiryResponseDTO.getCountry());
-                    corporateDetail.setText(inquiryResponseDTO.getCorporate());
-                    salesPersonDetail.setText(inquiryResponseDTO.getSalesPerson());
-                    inquiryTypeDetail.setText(inquiryResponseDTO.getInquiryType());
-                    industryDetail.setText(inquiryResponseDTO.getIndustry());
-                    corporationCodeDetail.setText(inquiryResponseDTO.getCorporationCode());
-                    productTypeDetail.setText(inquiryResponseDTO.getProductType());
-                    progressDetail.setText(inquiryResponseDTO.getProgress());
-                    customerRequestDateDetail.setText(inquiryResponseDTO.getCustomerRequestDate());
-                    additionalRequestsDetail.setText(inquiryResponseDTO.getAdditionalRequests());
-                    fileNameDetail.setText(inquiryResponseDTO.getFileName());
-                    responseDeadlineDetail.setText(inquiryResponseDTO.getResponseDeadline());
-
-                    List<LineItemResponseDTO> lineItems = inquiryResponseDTO.getLineItemResponseDTOs();
-                    lineItemAdapter = new LineItemAdapter(lineItems);
+                    lineItemAdapter = new LineItemAdapter(inquiryResponseDTO.getLineItemResponseDTOs(), productType);
                     recyclerViewLineItems.setAdapter(lineItemAdapter);
+
+                    updateUI(inquiryResponseDTO);
+
                 } else {
-                    Toast.makeText(
-                            InquiryDetailActivity.this,
-                            "데이터를 가져오는 데 실패했습니다.",
-                            Toast.LENGTH_SHORT
-                    ).show();
+                    Toast.makeText(InquiryDetailActivity.this, "데이터를 가져오는 데 실패했습니다.", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<InquiryResponseDTO> call, @NonNull Throwable t) {
+                Log.e("API_CALL_FAILURE", "API 호출 실패: " + t.getMessage(), t);
                 Toast.makeText(
                         InquiryDetailActivity.this,
                         "API 호출 실패: " + t.getMessage(),
@@ -142,5 +118,26 @@ public class InquiryDetailActivity extends AppCompatActivity {
                 ).show();
             }
         });
+    }
+
+    private void updateUI(InquiryResponseDTO inquiryResponseDTO) {
+        inquiryIdDetail.setText(String.valueOf(inquiryResponseDTO.getInquiryId()));
+        nameDetail.setText(inquiryResponseDTO.getName());
+        customerNameDetail.setText(inquiryResponseDTO.getCustomerName());
+        customerCodeDetail.setText(inquiryResponseDTO.getCustomerCode());
+        emailDetail.setText(inquiryResponseDTO.getEmail());
+        phoneDetail.setText(inquiryResponseDTO.getPhone());
+        countryDetail.setText(inquiryResponseDTO.getCountry());
+        corporateDetail.setText(inquiryResponseDTO.getCorporate());
+        salesPersonDetail.setText(inquiryResponseDTO.getSalesPerson());
+        inquiryTypeDetail.setText(inquiryResponseDTO.getInquiryType());
+        industryDetail.setText(inquiryResponseDTO.getIndustry());
+        corporationCodeDetail.setText(inquiryResponseDTO.getCorporationCode());
+        productTypeDetail.setText(inquiryResponseDTO.getProductType());
+        progressDetail.setText(inquiryResponseDTO.getProgress());
+        customerRequestDateDetail.setText(inquiryResponseDTO.getCustomerRequestDate());
+        additionalRequestsDetail.setText(inquiryResponseDTO.getAdditionalRequests());
+        fileNameDetail.setText(inquiryResponseDTO.getFileName());
+        responseDeadlineDetail.setText(inquiryResponseDTO.getResponseDeadline());
     }
 }

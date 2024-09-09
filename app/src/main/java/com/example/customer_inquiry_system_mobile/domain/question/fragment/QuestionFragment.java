@@ -54,7 +54,7 @@ public class QuestionFragment extends Fragment {
     }
 
     private void loadQuestions() {
-        RetrofitService retrofitService = new RetrofitService();
+        RetrofitService retrofitService = new RetrofitService(null);
         QuestionAPI questionAPI = retrofitService.getRetrofit().create(QuestionAPI.class);
 
         questionAPI.getAllQuestions().enqueue(new Callback<List<QuestionResponseDTO>>() {

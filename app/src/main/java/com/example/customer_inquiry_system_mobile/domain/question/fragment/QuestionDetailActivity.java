@@ -51,7 +51,7 @@ public class QuestionDetailActivity extends AppCompatActivity {
     }
 
     private void fetchQuestionById(Long questionId) {
-        RetrofitService retrofitService = new RetrofitService();
+        RetrofitService retrofitService = new RetrofitService(null);
         QuestionAPI questionAPI = retrofitService.getRetrofit().create(QuestionAPI.class);
 
         questionAPI.getQuestionById(questionId).enqueue(new Callback<QuestionResponseDTO>() {
@@ -88,7 +88,7 @@ public class QuestionDetailActivity extends AppCompatActivity {
     }
 
     private void fetchAnswerByQuestionId(Long questionId) {
-        RetrofitService retrofitService = new RetrofitService();
+        RetrofitService retrofitService = new RetrofitService(null);
         AnswerAPI answerAPI = retrofitService.getRetrofit().create(AnswerAPI.class);
 
         answerAPI.getAnswerByQuestionId(questionId).enqueue(new Callback<AnswerResponseDTO>() {

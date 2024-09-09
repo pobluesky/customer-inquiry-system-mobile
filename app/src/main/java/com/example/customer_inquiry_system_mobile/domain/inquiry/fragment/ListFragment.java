@@ -56,7 +56,7 @@ public class ListFragment extends Fragment {
     }
 
     private void loadInquiries() {
-        RetrofitService retrofitService = new RetrofitService();
+        RetrofitService retrofitService = new RetrofitService(null);
         InquiryAPI inquiryAPI = retrofitService.getRetrofit().create(InquiryAPI.class);
 
         inquiryAPI.getAllInquiries().enqueue(new Callback<List<InquiryResponseDTO>>() {

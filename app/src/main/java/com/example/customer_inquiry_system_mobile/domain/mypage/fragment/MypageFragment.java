@@ -47,7 +47,7 @@ public class MypageFragment extends Fragment {
                 false
         );
 
-        RetrofitService retrofitService = new RetrofitService();
+        RetrofitService retrofitService = new RetrofitService(null);
         userApi = retrofitService.getRetrofit().create(UserApi.class);
 
         textViewName = view.findViewById(R.id.textViewNameValue);
