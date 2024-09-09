@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/lineItemId"
+        android:layout_width="50dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Line Item ID: 123"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/kind"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Kind: Example Kind"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/inqName"
+            android:layout_width="120dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="inqName"
+            android:textSize="14sp"
+            android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/orderCategory"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="orderCategory"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/thickness"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="thickness"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/width"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="width"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="quantity"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/expectedDeadline"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="expectedDeadline"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/orderEdge"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="orderEdge"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/inDiameter"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="inDiameter"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/outDiameter"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="outDiameter"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/sleeveThickness"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="sleeveThickness"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/tensileStrength"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="tensileStrength"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/elongationRatio"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="elongationRatio"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/hardness"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="hardness"
+        android:textSize="14sp"
+        android:padding="8dp" />
+    </LinearLayout>
+
+</HorizontalScrollView>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/lineItemId"
+        android:layout_width="50dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Line Item ID: 123"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/lab"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Lab: Example Lab"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/kind"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Kind: Example Kind"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/standardOrg"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Standard Org: Example Org"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/annualCost"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Annual Cost: $0.00"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/salesVehicleName"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Sales Vehicle Name: Example Vehicle"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/partName"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Part Name: Example Part"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/ixPlate"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="IX Plate: Example Plate"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/thickness"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Thickness: 10mm"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/width"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Width: 50cm"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Quantity: 100"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/expectedDeliveryDate"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Expected Delivery Date: 2024-12-31"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/transportationDestination"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Transportation Destination: Example Destination"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/edge"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Edge: Example Edge"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/tolerance"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Tolerance: Example Tolerance"
+        android:textSize="14sp"
+        android:padding="8dp" />
+    </LinearLayout>
+
+</HorizontalScrollView>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/lineItemId"
+        android:layout_width="50dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Line Item ID: 123"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/generalDetails"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="generalDetails"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/orderInfo"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="orderInfo"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/ladleIngredient"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="ladleIngredient"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/productIngredient"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="productIngredient"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/seal"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="seal"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/grainSizeAnalysis"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="grainSizeAnalysis"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/show"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="show"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/extraShow"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="extraShow"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/agingShow"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="agingShow"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/curve"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="curve"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/additionalRequests"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="additionalRequests"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/hardness"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="hardness"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/dropWeightTest"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="dropWeightTest"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/ultrasonicTransducer"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="ultrasonicTransducer"
+        android:textSize="14sp"
+        android:padding="8dp" />
+    </LinearLayout>
+
+</HorizontalScrollView>

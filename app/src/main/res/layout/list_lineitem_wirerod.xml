@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/lineItemId"
+        android:layout_width="50dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Line Item ID: 123"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/kind"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="kind"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/inqName"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="inqName"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/orderCategory"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="orderCategory"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/diameter"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="diameter"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="quantity"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/expectedDeadline"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="expectedDeadline"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/initialQuantity"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="initialQuantity"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/customerProcessing"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="customerProcessing"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/finalUse"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="finalUse"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/transportationDestination"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="transportationDestination"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/annualCost"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="annualCost"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/legalRegulatoryReview"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="legalRegulatoryReview"
+        android:textSize="14sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/legalRegulatoryReviewDetail"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="legalRegulatoryReviewDetail"
+        android:textSize="14sp"
+        android:padding="8dp"
+        />
+
+        <TextView
+            android:id="@+id/finalCustomer"
+            android:layout_width="120dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="finalCustomer"
+            android:textSize="14sp"
+            android:padding="8dp" />
+    </LinearLayout>
+
+</HorizontalScrollView>
