@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/kind"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Kind: Example Kind"
@@ -29,7 +29,7 @@
 
         <TextView
             android:id="@+id/inqName"
-            android:layout_width="120dp"
+            android:layout_width="150dp"
             android:gravity="center"
             android:layout_height="wrap_content"
             android:text="inqName"
@@ -38,7 +38,7 @@
 
     <TextView
         android:id="@+id/orderCategory"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="orderCategory"
@@ -47,7 +47,7 @@
 
     <TextView
         android:id="@+id/thickness"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="thickness"
@@ -56,7 +56,7 @@
 
     <TextView
         android:id="@+id/width"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="width"
@@ -65,7 +65,7 @@
 
     <TextView
         android:id="@+id/quantity"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="quantity"
@@ -74,7 +74,7 @@
 
     <TextView
         android:id="@+id/expectedDeadline"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="expectedDeadline"
@@ -83,7 +83,7 @@
 
     <TextView
         android:id="@+id/orderEdge"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="orderEdge"
@@ -92,7 +92,7 @@
 
     <TextView
         android:id="@+id/inDiameter"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="inDiameter"
@@ -101,7 +101,7 @@
 
     <TextView
         android:id="@+id/outDiameter"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="outDiameter"
@@ -110,7 +110,7 @@
 
     <TextView
         android:id="@+id/sleeveThickness"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="sleeveThickness"
@@ -119,7 +119,7 @@
 
     <TextView
         android:id="@+id/tensileStrength"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="tensileStrength"
@@ -128,7 +128,7 @@
 
     <TextView
         android:id="@+id/elongationRatio"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="elongationRatio"
@@ -137,7 +137,7 @@
 
     <TextView
         android:id="@+id/hardness"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="hardness"

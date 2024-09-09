@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <TextView
+        android:layout_width="50dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="no"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="일반사항"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="주문정보"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="성분(ladle)"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="성분(product)"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="인장"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="입도시험"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="충격"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="추가충격"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="시효충격"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="굴곡"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="추가요청사항"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="경도"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="낙하충격시험"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="초음파탐상시험"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+</LinearLayout>

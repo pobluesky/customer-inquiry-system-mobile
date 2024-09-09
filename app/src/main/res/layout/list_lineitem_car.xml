@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/lab"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Lab: Example Lab"
@@ -29,7 +29,7 @@
 
     <TextView
         android:id="@+id/kind"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Kind: Example Kind"
@@ -38,7 +38,7 @@
 
     <TextView
         android:id="@+id/standardOrg"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Standard Org: Example Org"
@@ -47,7 +47,7 @@
 
     <TextView
         android:id="@+id/annualCost"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Annual Cost: $0.00"
@@ -56,7 +56,7 @@
 
     <TextView
         android:id="@+id/salesVehicleName"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Sales Vehicle Name: Example Vehicle"
@@ -65,7 +65,7 @@
 
     <TextView
         android:id="@+id/partName"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Part Name: Example Part"
@@ -74,7 +74,7 @@
 
     <TextView
         android:id="@+id/ixPlate"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="IX Plate: Example Plate"
@@ -83,7 +83,7 @@
 
     <TextView
         android:id="@+id/thickness"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Thickness: 10mm"
@@ -92,7 +92,7 @@
 
     <TextView
         android:id="@+id/width"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Width: 50cm"
@@ -101,7 +101,7 @@
 
     <TextView
         android:id="@+id/quantity"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Quantity: 100"
@@ -110,7 +110,7 @@
 
     <TextView
         android:id="@+id/expectedDeliveryDate"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Expected Delivery Date: 2024-12-31"
@@ -119,7 +119,7 @@
 
     <TextView
         android:id="@+id/transportationDestination"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Transportation Destination: Example Destination"
@@ -128,7 +128,7 @@
 
     <TextView
         android:id="@+id/edge"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Edge: Example Edge"
@@ -137,7 +137,7 @@
 
     <TextView
         android:id="@+id/tolerance"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Tolerance: Example Tolerance"

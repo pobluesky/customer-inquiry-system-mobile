@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <TextView
+        android:layout_width="50dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="no"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="품종"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="INQ규격명"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="주문용도"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="직경(mm)"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="수량(mt)"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="희망납기일"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="초도물량"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="고객사가공공정"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="최종용도"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="운송목적지"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="연소요량"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="법적규제사항검토"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="법적규제사항검토상세"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="최종고객사"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+</LinearLayout>

@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/kind"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="kind"
@@ -29,7 +29,7 @@
 
     <TextView
         android:id="@+id/inqName"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="inqName"
@@ -38,7 +38,7 @@
 
     <TextView
         android:id="@+id/orderCategory"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="orderCategory"
@@ -47,7 +47,7 @@
 
     <TextView
         android:id="@+id/diameter"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="diameter"
@@ -56,7 +56,7 @@
 
     <TextView
         android:id="@+id/quantity"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="quantity"
@@ -65,7 +65,7 @@
 
     <TextView
         android:id="@+id/expectedDeadline"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="expectedDeadline"
@@ -74,7 +74,7 @@
 
     <TextView
         android:id="@+id/initialQuantity"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="initialQuantity"
@@ -83,7 +83,7 @@
 
     <TextView
         android:id="@+id/customerProcessing"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="customerProcessing"
@@ -92,7 +92,7 @@
 
     <TextView
         android:id="@+id/finalUse"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="finalUse"
@@ -101,7 +101,7 @@
 
     <TextView
         android:id="@+id/transportationDestination"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="transportationDestination"
@@ -110,7 +110,7 @@
 
     <TextView
         android:id="@+id/annualCost"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="annualCost"
@@ -119,7 +119,7 @@
 
     <TextView
         android:id="@+id/legalRegulatoryReview"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="legalRegulatoryReview"
@@ -128,7 +128,7 @@
 
     <TextView
         android:id="@+id/legalRegulatoryReviewDetail"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:text="legalRegulatoryReviewDetail"
@@ -138,7 +138,7 @@
 
         <TextView
             android:id="@+id/finalCustomer"
-            android:layout_width="120dp"
+            android:layout_width="150dp"
             android:gravity="center"
             android:layout_height="wrap_content"
             android:text="finalCustomer"
