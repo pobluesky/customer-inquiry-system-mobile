@@ -2,12 +2,13 @@ package com.example.customer_inquiry_system_mobile.domain.inquiry.dto;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class InquiryResponseDTO {
     @SerializedName("inquiryId")
     @Expose
-    Long inquiryId;
+    private Long inquiryId;
 
     @SerializedName("name")
     @Expose
@@ -84,7 +85,6 @@ public class InquiryResponseDTO {
     @SerializedName("lineItemResponseDTOs")
     @Expose
     private List<LineItemResponseDTO> lineItemResponseDTOs;
-
 
     public Long getInquiryId() {
         return inquiryId;
@@ -164,9 +164,5 @@ public class InquiryResponseDTO {
 
     public List<LineItemResponseDTO> getLineItemResponseDTOs() {
         return lineItemResponseDTOs;
-    }
-
-    public void setLineItemResponseDTOs(List<LineItemResponseDTO> lineItemResponseDTOs) {
-        this.lineItemResponseDTOs = lineItemResponseDTOs;
     }
 }
