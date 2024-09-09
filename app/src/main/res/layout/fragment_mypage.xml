@@ -6,15 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
-    android:background="#F2F7FF"
-    android:gravity="center_horizontal"> <!-- Center content horizontally -->
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="40dp"
-        app:srcCompat="@drawable/logo1" />
+    android:gravity="center_horizontal">
 
     <TextView
         android:id="@+id/textView3"
