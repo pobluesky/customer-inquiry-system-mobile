@@ -1,8 +1,11 @@
 package com.example.customer_inquiry_system_mobile.global;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.customer_inquiry_system_mobile.R;
 import com.example.customer_inquiry_system_mobile.domain.dashboard.fragment.DashboardFragment;
 import com.example.customer_inquiry_system_mobile.domain.mypage.fragment.MypageFragment;
+import com.example.customer_inquiry_system_mobile.domain.notification.NotificationActivity;
 import com.example.customer_inquiry_system_mobile.domain.question.fragment.QuestionFragment;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.fragment.ListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -32,6 +36,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView bellIcon = findViewById(R.id.bell);
+        bellIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
 
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.menu_frame_layout, fragmentList).commitAllowingStateLoss();

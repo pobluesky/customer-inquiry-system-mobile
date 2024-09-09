@@ -3,6 +3,7 @@ package com.example.customer_inquiry_system_mobile.global;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.LineItemDeserializer;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.LineItemResponseDTO;
 import com.example.customer_inquiry_system_mobile.domain.mypage.api.UserApi;
+import com.example.customer_inquiry_system_mobile.domain.notification.api.NotificationApi;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -47,5 +48,9 @@ public class RetrofitService {
 
     public UserApi getUserApi() {
         return retrofit.create(UserApi.class);
+    }
+
+    public NotificationApi getNotificationApi() {
+        return retrofit.create(NotificationApi.class);
     }
 }

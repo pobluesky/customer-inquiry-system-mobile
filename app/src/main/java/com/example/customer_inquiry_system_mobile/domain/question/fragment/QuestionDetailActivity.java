@@ -21,12 +21,18 @@ import retrofit2.Response;
 
 public class QuestionDetailActivity extends AppCompatActivity {
 
-    private TextView title, status, type, questionContents, answerTitle, answerContents;
+    private TextView
+                    title,
+                    status,
+                    type,
+                    questionContents,
+                    answerTitle,
+                    answerContents;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question_detail);  // XML 레이아웃 파일 사용
+        setContentView(R.layout.activity_question_detail);
 
         type = findViewById(R.id.questionType);
         status = findViewById(R.id.questionStatus);

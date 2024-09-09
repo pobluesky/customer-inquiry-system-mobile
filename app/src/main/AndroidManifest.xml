@@ -16,13 +16,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".domain.notification.NotificationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Customerinquirysystemmobile" />
+        <activity
             android:name=".domain.question.fragment.QuestionDetailActivity"
+            android:theme="@style/Theme.Customerinquirysystemmobile"
             android:exported="false" />
         <activity
             android:name=".domain.inquiry.fragment.InquiryDetailActivity"
+            android:theme="@style/Theme.Customerinquirysystemmobile"
             android:exported="false" />
         <activity android:name=".global.MainActivity" />
-        <activity android:name=".domain.mypage.fragment.LoginActivity"
+        <activity
+            android:name=".domain.mypage.fragment.LoginActivity"
+            android:theme="@style/Theme.Customerinquirysystemmobile"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

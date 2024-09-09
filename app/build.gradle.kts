@@ -40,6 +40,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -49,5 +51,4 @@ dependencies {
     implementation ("com.google.code.gson:gson:2.8.8")
     implementation ("com.squareup.okhttp3:logging-interceptor:4.9.1")
     implementation ("com.google.android.material:material:1.4.0")
-
 }
