@@ -10,12 +10,17 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.customer_inquiry_system_mobile.R;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.adapter.HeaderPagerAdapter;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.adapter.LineItemAdapter;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquiryResponseDTO;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.api.InquiryAPI;
+import com.example.customer_inquiry_system_mobile.global.HeaderUtils;
 import com.example.customer_inquiry_system_mobile.global.RetrofitService;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -73,8 +78,17 @@ public class InquiryDetailActivity extends AppCompatActivity {
         recyclerViewLineItems = findViewById(R.id.recyclerViewLineItems);
         recyclerViewLineItems.setLayoutManager(new LinearLayoutManager(this));
 
-        Long inquiryId = getIntent().getLongExtra("inquiry_id", -1);
+        // productType을 가져와서 헤더 레이아웃 설정
         String productType = getIntent().getStringExtra("product_type");
+        if (productType != null) {
+            ViewPager2 viewPagerHeaders = findViewById(R.id.viewPagerHeaders);
+            List<Integer> headerLayouts = HeaderUtils.getHeaderLayouts(productType);
+
+            HeaderPagerAdapter headerAdapter = new HeaderPagerAdapter(headerLayouts);
+            viewPagerHeaders.setAdapter(headerAdapter);
+        }
+
+        Long inquiryId = getIntent().getLongExtra("inquiry_id", -1);
 
         if (inquiryId != -1) {
             fetchInquiryById(inquiryId, productType);

@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -58,7 +59,11 @@ public class LineItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         View view;
         switch (viewType) {
             case VIEW_TYPE_CAR:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_lineitem_car, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(
+                        R.layout.list_lineitem_car,
+                        parent,
+                        false
+                );
                 return new CarLineItemViewHolder(view);
             case VIEW_TYPE_COLDROLLED:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_lineitem_coldrolled, parent, false);
