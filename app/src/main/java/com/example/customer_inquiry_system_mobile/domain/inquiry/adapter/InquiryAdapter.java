@@ -65,6 +65,7 @@ public class InquiryAdapter extends RecyclerView.Adapter<InquiryHolder> {
             intent.putExtra("file_name", inquiryResponseDTO.getFileName());
             intent.putExtra("file_path", inquiryResponseDTO.getFilePath());
             intent.putExtra("response_deadline", inquiryResponseDTO.getResponseDeadline());
+
             context.startActivity(intent);
         });
     }

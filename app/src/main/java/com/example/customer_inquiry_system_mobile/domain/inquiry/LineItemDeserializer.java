@@ -20,17 +20,19 @@ public class LineItemDeserializer implements JsonDeserializer<LineItemResponseDT
     }
 
     @Override
-    public LineItemResponseDTO deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+    public LineItemResponseDTO deserialize(
+            JsonElement json,
+            Type typeOfT,
+            JsonDeserializationContext context
+    ) throws JsonParseException {
         JsonObject jsonObject = json.getAsJsonObject();
 
-        // If productType is provided in the constructor, use it; otherwise, try to extract from JSON
         String inferredProductType = this.productType;
 
         if (inferredProductType == null) {
             throw new JsonParseException("productType is missing or null in JSON data.");
         }
 
-        // Deserialize based on the inferred or provided productType
         switch (inferredProductType) {
             case "CAR":
                 return context.deserialize(jsonObject, CarLineItemResponseDTO.class);

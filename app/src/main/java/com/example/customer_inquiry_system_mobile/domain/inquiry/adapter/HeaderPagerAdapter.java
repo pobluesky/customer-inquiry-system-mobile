@@ -20,7 +20,12 @@ public class HeaderPagerAdapter extends RecyclerView.Adapter<HeaderPagerAdapter.
     @NonNull
     @Override
     public HeaderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(headerLayouts.get(viewType), parent, false);
+        View view = LayoutInflater.from(
+                parent.getContext()).inflate(headerLayouts.get(viewType),
+                parent,
+                false
+        );
+
         return new HeaderViewHolder(view);
     }
 

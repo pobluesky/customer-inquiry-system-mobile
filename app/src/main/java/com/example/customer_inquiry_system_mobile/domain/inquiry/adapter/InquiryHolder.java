@@ -17,6 +17,5 @@ public class InquiryHolder extends RecyclerView.ViewHolder {
         inquiryType=itemView.findViewById(R.id.inquiryListItem_InquiryType);
         progress=itemView.findViewById(R.id.inquiryListItem_Progress);
         customerName=itemView.findViewById(R.id.inquiryListItem_CustomerName);
-
     }
 }

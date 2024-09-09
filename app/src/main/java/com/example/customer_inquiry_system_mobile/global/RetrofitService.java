@@ -41,7 +41,6 @@ public class RetrofitService {
                 .build();
     }
 
-
     public Retrofit getRetrofit() {
         return retrofit;
     }

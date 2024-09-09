@@ -66,16 +66,36 @@ public class LineItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 );
                 return new CarLineItemViewHolder(view);
             case VIEW_TYPE_COLDROLLED:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_lineitem_coldrolled, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(
+                        R.layout.list_lineitem_coldrolled,
+                        parent,
+                        false
+                );
+
                 return new ColdRolledLineItemViewHolder(view);
             case VIEW_TYPE_HOTROLLED:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_lineitem_hotrolled, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(
+                        R.layout.list_lineitem_hotrolled,
+                        parent,
+                        false
+                );
+
                 return new HotRolledLineItemViewHolder(view);
             case VIEW_TYPE_THICKPLATE:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_lineitem_thickplate, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(
+                        R.layout.list_lineitem_thickplate,
+                        parent,
+                        false
+                );
+
                 return new ThickPlateLineItemViewHolder(view);
             case VIEW_TYPE_WIREROD:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_lineitem_wirerod, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(
+                        R.layout.list_lineitem_wirerod,
+                        parent,
+                        false
+                );
+
                 return new WireRodLineItemViewHolder(view);
             default:
                 throw new IllegalArgumentException("Invalid viewType: " + viewType);
@@ -88,11 +108,7 @@ public class LineItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         switch (holder.getItemViewType()) {
             case VIEW_TYPE_CAR:
-                if (lineItem instanceof CarLineItemResponseDTO) {
-                    ((CarLineItemViewHolder) holder).bind((CarLineItemResponseDTO) lineItem);
-                } else {
-                    throw new ClassCastException("Expected CarLineItemResponseDTO but got " + lineItem.getClass().getName());
-                }
+                ((CarLineItemViewHolder) holder).bind((CarLineItemResponseDTO) lineItem);
                 break;
             case VIEW_TYPE_COLDROLLED:
                 ((ColdRolledLineItemViewHolder) holder).bind((ColdRolledLineItemResponseDTO) lineItem);
