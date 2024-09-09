@@ -7,27 +7,27 @@ public class QuestionResponseDTO {
 
     @SerializedName("questionId")
     @Expose
-    Long questionId;
+    private Long questionId;
 
     @SerializedName("customer")
     @Expose
-    String customer;
+    private String customer;
 
     @SerializedName("title")
     @Expose
-    String title;
+    private String title;
 
     @SerializedName("status")
     @Expose
-    String status;
+    private String status;
 
     @SerializedName("type")
     @Expose
-    String type;
+    private String type;
 
     @SerializedName("contents")
     @Expose
-    String contents;
+    private String contents;
 
     public Long getQuestionId() {
         return questionId;

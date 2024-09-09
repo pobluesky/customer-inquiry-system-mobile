@@ -7,11 +7,11 @@ public class AnswerResponseDTO {
 
     @SerializedName("title")
     @Expose
-    String title;
+    private String title;
 
     @SerializedName("contents")
     @Expose
-    String contents;
+    private String contents;
 
     public String getTitle() { return title;}
 
