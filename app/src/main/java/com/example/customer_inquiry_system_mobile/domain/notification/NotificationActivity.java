@@ -1,6 +1,7 @@
 package com.example.customer_inquiry_system_mobile.domain.notification;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,9 +34,11 @@ public class NotificationActivity extends AppCompatActivity {
 
     private NotificationApi notificationApi;
 
-    private String token;
-
     private Long userId;
+
+    private Button buttonUnread;
+
+    private Button buttonRead;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,22 +47,25 @@ public class NotificationActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerViewNotifications);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new NotificationAdapter(notifications);
-        recyclerView.setAdapter(adapter);
 
         RetrofitService retrofitService = new RetrofitService(null);
         notificationApi = retrofitService.getNotificationApi();
 
-        token = getTokenFromPreferences();
+        adapter = new NotificationAdapter(notifications, retrofitService);
+        recyclerView.setAdapter(adapter);
+
+        int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.recycler_view_item_spacing);
+        recyclerView.addItemDecoration(new SpaceItemDecoration(spacingInPixels));
+
         userId = getUserIdFromPreferences();
 
-        Button buttonUnread = findViewById(R.id.buttonUnread);
-        Button buttonRead = findViewById(R.id.buttonRead);
+        buttonUnread = findViewById(R.id.buttonUnread);
+        buttonRead = findViewById(R.id.buttonRead);
 
         buttonUnread.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("NotificationActivity", "Unread button clicked");
+                updateButtonState(buttonUnread);
                 fetchNotifications(true);
             }
         });
@@ -67,13 +73,29 @@ public class NotificationActivity extends AppCompatActivity {
         buttonRead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("NotificationActivity", "Read button clicked");
+                updateButtonState(buttonRead);
                 fetchNotifications(false);
             }
         });
 
-
+        updateButtonState(buttonUnread);
         fetchNotifications(true);
+    }
+
+    private void updateButtonState(Button clickedButton) {
+        if (clickedButton == buttonUnread) {
+            buttonUnread.setTextColor(Color.parseColor("#03507D"));
+            buttonRead.setTextColor(Color.parseColor("#C1C1C1"));
+
+            findViewById(R.id.viewUnread).setBackgroundColor(Color.parseColor("#03507D"));
+            findViewById(R.id.viewRead).setBackgroundColor(Color.parseColor("#C1C1C1"));
+        } else if (clickedButton == buttonRead) {
+            buttonUnread.setTextColor(Color.parseColor("#C1C1C1"));
+            buttonRead.setTextColor(Color.parseColor("#03507D"));
+
+            findViewById(R.id.viewUnread).setBackgroundColor(Color.parseColor("#C1C1C1"));
+            findViewById(R.id.viewRead).setBackgroundColor(Color.parseColor("#03507D"));
+        }
     }
 
     private void fetchNotifications(boolean unread) {
@@ -86,11 +108,16 @@ public class NotificationActivity extends AppCompatActivity {
 
         call.enqueue(new Callback<List<NotificationResponseDTO>>() {
             @Override
-            public void onResponse(Call<List<NotificationResponseDTO>> call, Response<List<NotificationResponseDTO>> response) {
+            public void onResponse(
+                    Call<List<NotificationResponseDTO>> call,
+                    Response<List<NotificationResponseDTO>> response
+            ) {
                 if (response.isSuccessful() && response.body() != null) {
                     List<NotificationResponseDTO> fetchedNotifications = response.body();
+
                     notifications.clear();
                     notifications.addAll(fetchedNotifications);
+
                     adapter.notifyDataSetChanged();
                 } else {
                     Log.e(
@@ -107,15 +134,8 @@ public class NotificationActivity extends AppCompatActivity {
         });
     }
 
-    private String getTokenFromPreferences() {
-        SharedPreferences sharedPreferences = getSharedPreferences("my_prefs", MODE_PRIVATE);
-
-        return sharedPreferences.getString("token", "");
-    }
-
     private Long getUserIdFromPreferences() {
         SharedPreferences sharedPreferences = getSharedPreferences("my_prefs", MODE_PRIVATE);
-
         return sharedPreferences.getLong("userId", -1L);
     }
 }

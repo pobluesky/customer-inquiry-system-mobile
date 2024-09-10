@@ -57,9 +57,9 @@ public class CarLineItemResponseDTO extends LineItemResponseDTO{
     @Expose
     private String transportationDestination;
 
-    @SerializedName("edge")
+    @SerializedName("orderEdge")
     @Expose
-    private String edge;
+    private String orderEdge;
 
     @SerializedName("tolerance")
     @Expose
@@ -124,8 +124,8 @@ public class CarLineItemResponseDTO extends LineItemResponseDTO{
         return transportationDestination;
     }
 
-    public String getEdge() {
-        return edge;
+    public String getOrderEdge() {
+        return orderEdge;
     }
 
     public String getTolerance() {

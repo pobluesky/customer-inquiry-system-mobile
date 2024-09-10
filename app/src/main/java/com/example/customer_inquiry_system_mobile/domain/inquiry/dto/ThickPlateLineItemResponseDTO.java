@@ -13,9 +13,9 @@ public class ThickPlateLineItemResponseDTO extends LineItemResponseDTO {
     @Expose
     private Long inquiryId;
 
-    @SerializedName("generalDetails")
+    @SerializedName("orderPurpose")
     @Expose
-    private String generalDetails;
+    private String orderPurpose;
 
     @SerializedName("orderInfo")
     @Expose
@@ -80,8 +80,8 @@ public class ThickPlateLineItemResponseDTO extends LineItemResponseDTO {
         return inquiryId;
     }
 
-    public String getGeneralDetails() {
-        return generalDetails;
+    public String getOrderPurpose() {
+        return orderPurpose;
     }
 
     public String getOrderInfo() {

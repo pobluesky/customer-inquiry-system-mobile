@@ -25,9 +25,13 @@ public class LineItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private final String type;
 
     private static final int VIEW_TYPE_CAR = 0;
+
     private static final int VIEW_TYPE_COLDROLLED = 1;
+
     private static final int VIEW_TYPE_HOTROLLED = 2;
+
     private static final int VIEW_TYPE_THICKPLATE = 3;
+
     private static final int VIEW_TYPE_WIREROD = 4;
 
     public LineItemAdapter(List<LineItemResponseDTO> lineItems, String type) {
@@ -179,7 +183,7 @@ public class LineItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             quantity.setText(String.valueOf(lineItem.getQuantity()));
             expectedDeliveryDate.setText(lineItem.getExpectedDeliveryDate());
             transportationDestination.setText(lineItem.getTransportationDestination());
-            edge.setText(lineItem.getEdge());
+            edge.setText(lineItem.getOrderEdge());
             tolerance.setText(lineItem.getTolerance());
             annualCost.setText(lineItem.getAnnualCost());
         }
@@ -300,7 +304,7 @@ public class LineItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public static class ThickPlateLineItemViewHolder extends RecyclerView.ViewHolder {
         TextView
                 lineItemId,
-                generalDetails,
+                orderPurpose,
                 orderInfo,
                 ladleIngredient,
                 productIngredient,
@@ -318,7 +322,7 @@ public class LineItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public ThickPlateLineItemViewHolder(@NonNull View itemView) {
             super(itemView);
             lineItemId = itemView.findViewById(R.id.lineItemId);
-            generalDetails = itemView.findViewById(R.id.generalDetails);
+            orderPurpose = itemView.findViewById(R.id.orderPurpose);
             orderInfo = itemView.findViewById(R.id.orderInfo);
             ladleIngredient = itemView.findViewById(R.id.ladleIngredient);
             productIngredient = itemView.findViewById(R.id.productIngredient);
@@ -336,7 +340,7 @@ public class LineItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public void bind(ThickPlateLineItemResponseDTO lineItem) {
             lineItemId.setText(String.valueOf(lineItem.getLineItemId()));
-            generalDetails.setText(String.valueOf(lineItem.getGeneralDetails()));
+            orderPurpose.setText(String.valueOf(lineItem.getOrderPurpose()));
             orderInfo.setText(String.valueOf(lineItem.getOrderInfo()));
             ladleIngredient.setText(String.valueOf(lineItem.getLadleIngredient()));
             productIngredient.setText(String.valueOf(lineItem.getProductIngredient()));

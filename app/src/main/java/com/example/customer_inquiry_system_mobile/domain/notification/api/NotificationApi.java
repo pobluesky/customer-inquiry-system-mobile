@@ -6,6 +6,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface NotificationApi {
@@ -15,5 +16,8 @@ public interface NotificationApi {
 
     @GET("mobile/api/notifications/read/{userId}")
     Call<List<NotificationResponseDTO>> getReadNotifications(@Path("userId") Long userId);
+
+    @PUT("mobile/api/notifications/{notificationId}")
+    Call<Void> updateNotificationIsRead(@Path("notificationId") Long notificationId);
 }
 

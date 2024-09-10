@@ -36,4 +36,8 @@ public class NotificationResponseDTO {
     public Boolean getRead() {
         return isRead;
     }
+
+    public void setRead() {
+        isRead = true;
+    }
 }
