@@ -66,7 +66,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                notification.setRead();
+                notification.read();
 
                 NotificationApi notificationApi = retrofitService.getNotificationApi();
 

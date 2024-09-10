@@ -37,7 +37,7 @@ public class NotificationResponseDTO {
         return isRead;
     }
 
-    public void setRead() {
+    public void read() {
         isRead = true;
     }
 }
