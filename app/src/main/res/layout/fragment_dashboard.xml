@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".domain.dashboard.fragment.DashboardFragment">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="대시보드"
-        android:textColor="@android:color/black"
-        android:textSize="50sp"/>
+        android:id="@+id/textViewMonthly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monthly Data" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textViewProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progress Data" />
+
+    <TextView
+        android:id="@+id/textViewPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Percentage Data" />
+
+    <TextView
+        android:id="@+id/textViewProductType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Type Data" />
+
+</LinearLayout>
