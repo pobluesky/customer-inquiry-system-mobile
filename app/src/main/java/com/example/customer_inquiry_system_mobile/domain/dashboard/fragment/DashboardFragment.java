@@ -64,11 +64,11 @@ public class DashboardFragment extends Fragment {
         RetrofitService retrofitService = new RetrofitService(null);
         dashboardAPI = retrofitService.getRetrofit().create(DashboardAPI.class);
 
-        textViewMonthly = view.findViewById(R.id.textViewMonthly);
+//        textViewMonthly = view.findViewById(R.id.textViewMonthly);
+        lineChartMonthly = view.findViewById(R.id.lineChartMonthly);
         textViewProgress = view.findViewById(R.id.textViewProgress);
         textViewPercentage = view.findViewById(R.id.textViewPercentage);
         textViewProductType = view.findViewById(R.id.textViewProductType);
-        lineChartMonthly = view.findViewById(R.id.lineChartMonthly);
 
         SharedPreferences prefs = getActivity().getSharedPreferences("my_prefs", MODE_PRIVATE);
         String token = prefs.getString("token", null); // 저장된 token 가져오기
@@ -96,7 +96,7 @@ public class DashboardFragment extends Fragment {
                 if (response.isSuccessful() && response.body() != null) {
                     Map<String, List<Object[]>> data = response.body();
                     String formattedData = formatInquiryData(data);
-                    textViewMonthly.setText(formattedData);
+//                    textViewMonthly.setText(formattedData);
                     updateLineChart(data);
                 } else {
                     handleErrorResponse(response);
@@ -259,7 +259,7 @@ public class DashboardFragment extends Fragment {
         lineChartMonthly.getDescription().setTextColor(Color.BLACK);
 
         // Animate chart
-        lineChartMonthly.animateXY(1000, 1000);
+        lineChartMonthly.animateXY(0, 250);
 
         lineChartMonthly.invalidate(); // Refresh the chart
     }
