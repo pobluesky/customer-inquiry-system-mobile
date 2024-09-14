@@ -1,36 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp">
 
-    <LinearLayout
+    <!-- 스크롤뷰로 감싸기 -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
 
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/lineChartMonthly"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp" />
-
-        <TextView
-            android:id="@+id/textViewProgress"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Progress Data" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewPercentage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Percentage Data" />
+            <!-- 평균 월별 문의 데이터 -->
+            <TextView
+                android:id="@+id/lineChartMonthlyLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="평균 월별 문의 데이터"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textViewProductType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Product Type Data" />
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChartMonthly"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
 
-    </LinearLayout>
-</ScrollView>
+            <!-- 진행 상태별 문의 수 데이터 -->
+            <TextView
+                android:id="@+id/pieChartTotalLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="진행 상태별 문의 수 데이터"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16dp">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChartTotal"
+                    android:layout_width="0dp"
+                    android:layout_height="300dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp" />
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChartManager"
+                    android:layout_width="0dp"
+                    android:layout_height="300dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- 완료/미완료 비율 데이터 -->
+            <TextView
+                android:id="@+id/combinedChartLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="완료/미완료 비율 데이터"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+
+            <com.github.mikephil.charting.charts.CombinedChart
+                android:id="@+id/combinedChart"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                />
+
+            <!-- 제품 유형별 문의 수 데이터 -->
+            <TextView
+                android:id="@+id/radarChartLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="제품 유형별 문의 수 데이터"
+                android:textColor="@color/navy_blue"
+                android:textSize="18sp" />
+
+            <com.github.mikephil.charting.charts.RadarChart
+                android:id="@+id/radarChart"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
