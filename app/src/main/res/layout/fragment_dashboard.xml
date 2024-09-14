@@ -3,9 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16sp">
 
-    <!-- 스크롤뷰로 감싸기 -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,90 +16,354 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- 평균 월별 문의 데이터 -->
-            <TextView
-                android:id="@+id/lineChartMonthlyLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:gravity="center"
-                android:text="평균 월별 문의 데이터"
-                android:textColor="@color/navy_blue"
-                android:textSize="18sp" />
-
-            <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/lineChartMonthly"
-                android:layout_width="match_parent"
-                android:layout_height="300dp" />
-
-            <!-- 진행 상태별 문의 수 데이터 -->
-            <TextView
-                android:id="@+id/pieChartTotalLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:gravity="center"
-                android:text="진행 상태별 문의 수 데이터"
-                android:textColor="@color/navy_blue"
-                android:textSize="18sp" />
-
+            <!-- [제목] 월별 Inquiry 접수-주문 체결 평균 처리 기간 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="16dp">
+                android:layout_marginTop="16sp"
+                android:layout_marginBottom="16sp">
 
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/pieChartTotal"
-                    android:layout_width="0dp"
-                    android:layout_height="300dp"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="8dp" />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8sp"
+                    android:gravity="center"
+                    android:text="월별 Inquiry 접수-주문 체결 평균 처리 기간"
+                    android:textColor="@color/navy_blue"
+                    android:textSize="18sp" />
 
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/pieChartManager"
-                    android:layout_width="0dp"
-                    android:layout_height="300dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp" />
             </LinearLayout>
 
-            <!-- 완료/미완료 비율 데이터 -->
-            <TextView
-                android:id="@+id/combinedChartLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:gravity="center"
-                android:text="완료/미완료 비율 데이터"
-                android:textColor="@color/navy_blue"
-                android:textSize="18sp" />
+            <!-- [차트] 월별 Inquiry 접수-주문 체결 평균 처리 기간 -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChartMonthly"
+                android:layout_width="match_parent"
+                android:layout_height="250sp" />
 
+            <!-- [범례] 월별 Inquiry 접수-주문 체결 평균 처리 기간 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="32sp"
+                android:layout_marginBottom="48sp" >
+
+                <View
+                    android:layout_width="20sp"
+                    android:layout_height="20sp"
+                    android:layout_marginEnd="8sp"
+                    android:background="#0079FF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="20sp"
+                    android:layout_height="20sp"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginEnd="8sp"
+                    android:background="#FF0060" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manager"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- *********************************************************************** -->
+
+            <!-- [제목] Inquiry 주문 체결 완료 및 미완료 비중 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8sp"
+                    android:gravity="center"
+                    android:text="Inquiry 주문 체결 완료 및 미완료 비중"
+                    android:textColor="@color/navy_blue"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- [차트] Inquiry 주문 체결 완료 및 미완료 비중 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pieChartTotal"
+                        android:layout_width="0sp"
+                        android:layout_height="200sp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8sp" />
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pieChartManager"
+                        android:layout_width="0sp"
+                        android:layout_height="200sp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8sp" />
+                </LinearLayout>
+
+                <!-- [범례] Inquiry 주문 체결 완료 및 미완료 비중 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="16sp"
+                    android:layout_marginBottom="48sp" >
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <View
+                                android:layout_width="20sp"
+                                android:layout_height="20sp"
+                                android:layout_marginEnd="8sp"
+                                android:background="#B3C8CF" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="미완료 (Total)"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_marginTop="8sp">
+
+                            <View
+                                android:layout_width="20sp"
+                                android:layout_height="20sp"
+                                android:layout_marginEnd="8sp"
+                                android:background="#00A9FF" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="완료 (Total)"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="20sp"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <View
+                                android:layout_width="20sp"
+                                android:layout_height="20sp"
+                                android:layout_marginEnd="8sp"
+                                android:background="#B3C8CF" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="미완료 (Manager)"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_marginTop="8sp">
+
+                            <View
+                                android:layout_width="20sp"
+                                android:layout_height="20sp"
+                                android:layout_marginEnd="8sp"
+                                android:background="#F7418F" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="완료 (Manager)"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- *********************************************************************** -->
+
+            <!-- [제목] 전체 Inquiry 검토 현황별 건수 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16sp">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8sp"
+                    android:gravity="center"
+                    android:text="전체 Inquiry 검토 현황별 건수"
+                    android:textColor="@color/navy_blue"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <!-- [차트] 전체 Inquiry 검토 현황별 건수 -->
             <com.github.mikephil.charting.charts.CombinedChart
                 android:id="@+id/combinedChart"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="400sp"
                 />
 
-            <!-- 제품 유형별 문의 수 데이터 -->
-            <TextView
-                android:id="@+id/radarChartLabel"
-                android:layout_width="wrap_content"
+            <!-- [범례] 전체 Inquiry 검토 현황별 건수 -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:orientation="horizontal"
                 android:gravity="center"
-                android:text="제품 유형별 문의 수 데이터"
-                android:textColor="@color/navy_blue"
-                android:textSize="18sp" />
+                android:layout_marginTop="32sp"
+                android:layout_marginBottom="48sp">
 
+                <View
+                    android:layout_width="20sp"
+                    android:layout_height="20sp"
+                    android:layout_marginEnd="8sp"
+                    android:background="#00DFA2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="20sp"
+                    android:layout_height="20sp"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginEnd="8sp"
+                    android:background="#FF0060" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manager"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- *********************************************************************** -->
+
+            <!-- [제목] 제품별 주문 체결 현황 (전체 대비 나의 성과) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16sp"
+                android:layout_marginBottom="32sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8sp"
+                    android:text="제품별 주문 체결 현황 (전체 대비 성과)"
+                    android:textColor="@color/navy_blue"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <!-- [차트] 제품별 주문 체결 현황 (전체 대비 나의 성과) -->
             <com.github.mikephil.charting.charts.RadarChart
                 android:id="@+id/radarChart"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:layout_marginTop="16dp" />
+                android:layout_height="300sp" />
+
+            <!-- [범례] 제품별 주문 체결 현황 (전체 대비 나의 성과) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16sp"
+                android:layout_marginBottom="48sp">
+
+                <View
+                    android:layout_width="20sp"
+                    android:layout_height="20sp"
+                    android:layout_marginEnd="8sp"
+                    android:background="#00DFA2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="20sp"
+                    android:layout_height="20sp"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginEnd="8sp"
+                    android:background="#FF0066" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manager"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>
