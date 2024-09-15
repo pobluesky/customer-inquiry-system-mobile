@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#F02323"/> <!-- 빨간색 배경 -->
+    <corners android:radius="5dp"/> <!-- 둥근 모서리, 필요에 따라 조정 -->
+</shape>
