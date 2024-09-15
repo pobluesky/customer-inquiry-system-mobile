@@ -1,6 +1,10 @@
 package com.example.customer_inquiry_system_mobile.domain.question.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -73,6 +77,33 @@ public class QuestionDetailActivity extends AppCompatActivity {
                     status.setText(questionResponseDTO.getStatus());
                     title.setText(questionResponseDTO.getTitle());
                     questionContents.setText(questionResponseDTO.getContents());
+
+                    if ("답변대기".equals(questionResponseDTO.getStatus())) {
+                        answerTitle.setText("답변 대기중입니다");
+                        answerContents.setText("");
+
+                        answerTitle.setBackgroundResource(R.drawable.rounded_box);
+
+                        answerTitle.setGravity(Gravity.CENTER);
+
+                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                                LinearLayout.LayoutParams.MATCH_PARENT,
+                                (int) (150 * getResources().getDisplayMetrics().density)
+                        );
+                        answerTitle.setLayoutParams(params);
+
+                        findViewById(R.id.imageView7).setVisibility(View.GONE);
+
+                        status.setBackgroundResource(R.drawable.blue_background);
+                        status.setTextColor(Color.WHITE);
+
+                    } else if ("답변완료".equals(questionResponseDTO.getStatus())) {
+                        findViewById(R.id.imageView7).setVisibility(View.VISIBLE);
+                        fetchAnswerByQuestionId(questionId);
+
+                        status.setBackgroundResource(R.drawable.red_background);
+                        status.setTextColor(Color.WHITE);
+                    }
                 } else {
                     Toast.makeText(
                             QuestionDetailActivity.this,
@@ -93,6 +124,8 @@ public class QuestionDetailActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void fetchAnswerByQuestionId(Long questionId) {
         RetrofitService retrofitService = new RetrofitService(null);
         AnswerAPI answerAPI = retrofitService.getRetrofit().create(AnswerAPI.class);
@@ -106,15 +139,8 @@ public class QuestionDetailActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     AnswerResponseDTO answerResponseDTO = response.body();
 
-                    // UI에 Answer 데이터를 설정
                     answerTitle.setText(answerResponseDTO.getTitle());
                     answerContents.setText(answerResponseDTO.getContents());
-                } else {
-                    Toast.makeText(
-                            QuestionDetailActivity.this,
-                            "답변 데이터를 가져오는 데 실패했습니다.",
-                            Toast.LENGTH_SHORT
-                    ).show();
                 }
             }
 

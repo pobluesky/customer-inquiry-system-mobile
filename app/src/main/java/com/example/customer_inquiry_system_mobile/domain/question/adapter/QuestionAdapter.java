@@ -2,6 +2,7 @@ package com.example.customer_inquiry_system_mobile.domain.question.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,15 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionHolder> {
         holder.type.setText(questionResponseDTO.getType());
         holder.title.setText(questionResponseDTO.getTitle());
         holder.status.setText(questionResponseDTO.getStatus());
+
+        String status = questionResponseDTO.getStatus();
+        if ("답변대기".equals(status)) {
+            holder.status.setBackgroundResource(R.drawable.blue_background);
+            holder.status.setTextColor(Color.WHITE);
+        } else if ("답변완료".equals(status)) {
+            holder.status.setBackgroundResource(R.drawable.red_background);
+            holder.status.setTextColor(Color.WHITE);
+        }
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, QuestionDetailActivity.class);
