@@ -21,19 +21,20 @@
             android:theme="@style/Theme.Customerinquirysystemmobile" />
         <activity
             android:name=".domain.question.fragment.QuestionDetailActivity"
-            android:theme="@style/Theme.Customerinquirysystemmobile"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Customerinquirysystemmobile" />
         <activity
             android:name=".domain.inquiry.fragment.InquiryDetailActivity"
-            android:theme="@style/Theme.Customerinquirysystemmobile"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Customerinquirysystemmobile" />
         <activity android:name=".global.MainActivity" />
         <activity
             android:name=".domain.mypage.fragment.LoginActivity"
-            android:theme="@style/Theme.Customerinquirysystemmobile"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Customerinquirysystemmobile">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

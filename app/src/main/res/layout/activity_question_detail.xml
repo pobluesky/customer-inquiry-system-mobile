@@ -3,117 +3,146 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/revertIcon"
+        android:layout_width="37dp"
+        android:layout_height="33dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@drawable/revert" />
+
     <ScrollView
         android:id="@+id/firstScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/revertIcon"
         android:layout_marginBottom="16dp"
         android:paddingBottom="16dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="194dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="87dp"
-                    android:layout_height="82dp"
-                    android:layout_marginBottom="16dp"
-                    app:srcCompat="@drawable/question2" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="16dp">
+
+                    <TextView
+                        android:id="@+id/questionStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_box"
+                        android:padding="8dp"
+                        android:text="진행 상황" />
+
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/questionType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:text="문의 타입" />
 
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/questionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="제목"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="37dp"
+                    android:layout_height="63dp"
+                    android:layout_marginEnd="16dp"
+                    app:srcCompat="@drawable/question2" />
+
                 <TextView
-                    android:id="@+id/questionStatus"
+                    android:id="@+id/questionContents"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="진행 상황" />
+                    android:text="내용" />
             </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/firstScrollView"
+        android:layout_marginTop="16dp"
+        android:paddingBottom="56dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="35dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="16dp"
+                app:srcCompat="@drawable/answer" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/questionTitle"
+                    android:id="@+id/answerTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:text="제목" />
 
                 <TextView
-                    android:id="@+id/questionContents"
+                    android:id="@+id/answerContents"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:text="내용" />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
-
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/firstScrollView"
-    android:layout_marginTop="16dp"
-    android:paddingBottom="56dp">
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="16dp">
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="88dp"
-        android:layout_height="87dp"
-        android:layout_marginEnd="16dp"
-        app:srcCompat="@drawable/answer" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/answerTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="제목"
-                android:layout_marginBottom="16dp" />
-
-            <TextView
-                android:id="@+id/answerContents"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="내용"
-                android:layout_marginBottom="16dp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="15px"
+    android:padding="15dp"
     tools:context=".domain.inquiry.fragment.ListFragment">
 
     <LinearLayout
@@ -18,9 +18,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/regular"
-        android:paddingStart="25px"
         android:text="Inquiry 목록"
         android:textColor="@color/black"
+        android:gravity="center_horizontal"
         android:textSize="20dp" />
 
     <FrameLayout

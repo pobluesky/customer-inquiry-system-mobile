@@ -2,6 +2,8 @@ package com.example.customer_inquiry_system_mobile.domain.inquiry.fragment;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,25 +32,34 @@ public class InquiryDetailActivity extends AppCompatActivity {
 
     private TextView
             inquiryIdDetail,
-            nameDetail,
-            customerNameDetail,
-            customerCodeDetail,
-            emailDetail,
-            phoneDetail,
-            countryDetail,
-            corporateDetail,
-            salesPersonDetail,
             inquiryTypeDetail,
-            industryDetail,
-            corporationCodeDetail,
+            customerNameDetail,
             productTypeDetail,
-            progressDetail,
-            customerRequestDateDetail,
-            additionalRequestsDetail,
-            fileNameDetail,
-            responseDeadlineDetail;
+            corporateDetail,
+            countryDetail,
+            industryDetail;
+
+    private String
+            inquiryId,
+            name,
+            customerName,
+            customerCode,
+            email,
+            phone,
+            country,
+            corporate,
+            salesPerson,
+            inquiryType,
+            industry,
+            corporationCode,
+            productType,
+            progress,
+            customerRequestDate,
+            additionalRequests,
+            responseDeadline;
 
     private RecyclerView recyclerViewLineItems;
+
     private LineItemAdapter lineItemAdapter;
 
     @Override
@@ -56,29 +67,42 @@ public class InquiryDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inquiry_detail);
 
-        inquiryIdDetail = findViewById(R.id.inquiryIdDetail);
-        nameDetail = findViewById(R.id.nameDetail);
-        customerNameDetail = findViewById(R.id.customerNameDetail);
-        customerCodeDetail = findViewById(R.id.customerCodeDetail);
-        emailDetail = findViewById(R.id.emailDetail);
-        phoneDetail = findViewById(R.id.phoneDetail);
-        countryDetail = findViewById(R.id.countryDetail);
-        corporateDetail = findViewById(R.id.corporateDetail);
-        salesPersonDetail = findViewById(R.id.salesPersonDetail);
-        inquiryTypeDetail = findViewById(R.id.inquiryTypeDetail);
-        industryDetail = findViewById(R.id.industryDetail);
-        corporationCodeDetail = findViewById(R.id.corporationCodeDetail);
+        inquiryIdDetail = findViewById(R.id.textViewInquiryId);
         productTypeDetail = findViewById(R.id.productTypeDetail);
-        progressDetail = findViewById(R.id.progressDetail);
-        customerRequestDateDetail = findViewById(R.id.customerRequestDateDetail);
-        additionalRequestsDetail = findViewById(R.id.additionalRequestsDetail);
-        fileNameDetail = findViewById(R.id.fileNameDetail);
-        responseDeadlineDetail = findViewById(R.id.responseDeadlineDetail);
+        customerNameDetail = findViewById(R.id.customerNameDetail);
+        countryDetail = findViewById(R.id.countryDetail);
+        inquiryTypeDetail = findViewById(R.id.inquiryTypeDetail);
+        corporateDetail = findViewById(R.id.corporateDetail);
+        industryDetail = findViewById(R.id.industryDetail);
 
         recyclerViewLineItems = findViewById(R.id.recyclerViewLineItems);
         recyclerViewLineItems.setLayoutManager(new LinearLayoutManager(this));
 
-        // productType을 가져와서 헤더 레이아웃 설정
+        ImageView seeMoreIcon = findViewById(R.id.seeMoreIcon);
+
+        seeMoreIcon.setOnClickListener(v -> {
+            DetailsDialogFragment dialogFragment = DetailsDialogFragment.newInstance(
+                    inquiryId,
+                    name,
+                    customerCode,
+                    customerName,
+                    email,
+                    phone,
+                    country,
+                    corporate,
+                    salesPerson,
+                    inquiryType,
+                    industry,
+                    corporationCode,
+                    productType,
+                    progress,
+                    customerRequestDate,
+                    additionalRequests,
+                    responseDeadline
+            );
+            dialogFragment.show(getSupportFragmentManager(), "detailsDialog");
+        });
+
         String productType = getIntent().getStringExtra("product_type");
         if (productType != null) {
             ViewPager2 viewPagerHeaders = findViewById(R.id.viewPagerHeaders);
@@ -112,13 +136,21 @@ public class InquiryDetailActivity extends AppCompatActivity {
                     InquiryResponseDTO inquiryResponseDTO = response.body();
                     String productType = inquiryResponseDTO.getProductType();
 
-                    lineItemAdapter = new LineItemAdapter(inquiryResponseDTO.getLineItemResponseDTOs(), productType);
+                    lineItemAdapter = new LineItemAdapter(
+                            inquiryResponseDTO.getLineItemResponseDTOs(),
+                            productType
+                    );
+
                     recyclerViewLineItems.setAdapter(lineItemAdapter);
 
                     updateUI(inquiryResponseDTO);
 
                 } else {
-                    Toast.makeText(InquiryDetailActivity.this, "데이터를 가져오는 데 실패했습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(
+                            InquiryDetailActivity.this,
+                            "데이터를 가져오는 데 실패했습니다.",
+                            Toast.LENGTH_SHORT
+                    ).show();
                 }
             }
 
@@ -136,22 +168,29 @@ public class InquiryDetailActivity extends AppCompatActivity {
 
     private void updateUI(InquiryResponseDTO inquiryResponseDTO) {
         inquiryIdDetail.setText(String.valueOf(inquiryResponseDTO.getInquiryId()));
-        nameDetail.setText(inquiryResponseDTO.getName());
-        customerNameDetail.setText(inquiryResponseDTO.getCustomerName());
-        customerCodeDetail.setText(inquiryResponseDTO.getCustomerCode());
-        emailDetail.setText(inquiryResponseDTO.getEmail());
-        phoneDetail.setText(inquiryResponseDTO.getPhone());
-        countryDetail.setText(inquiryResponseDTO.getCountry());
-        corporateDetail.setText(inquiryResponseDTO.getCorporate());
-        salesPersonDetail.setText(inquiryResponseDTO.getSalesPerson());
-        inquiryTypeDetail.setText(inquiryResponseDTO.getInquiryType());
-        industryDetail.setText(inquiryResponseDTO.getIndustry());
-        corporationCodeDetail.setText(inquiryResponseDTO.getCorporationCode());
-        productTypeDetail.setText(inquiryResponseDTO.getProductType());
-        progressDetail.setText(inquiryResponseDTO.getProgress());
-        customerRequestDateDetail.setText(inquiryResponseDTO.getCustomerRequestDate());
-        additionalRequestsDetail.setText(inquiryResponseDTO.getAdditionalRequests());
-        fileNameDetail.setText(inquiryResponseDTO.getFileName());
-        responseDeadlineDetail.setText(inquiryResponseDTO.getResponseDeadline());
+                inquiryTypeDetail.setText(inquiryResponseDTO.getInquiryType());
+                customerNameDetail.setText(inquiryResponseDTO.getCustomerName());
+                productTypeDetail.setText(inquiryResponseDTO.getProductType());
+                corporateDetail.setText(inquiryResponseDTO.getCorporationCode());
+                countryDetail.setText(inquiryResponseDTO.getCountry());
+                industryDetail.setText(inquiryResponseDTO.getIndustry());
+
+        inquiryId = String.valueOf(inquiryResponseDTO.getInquiryId());
+        name = inquiryResponseDTO.getName();
+        customerName = inquiryResponseDTO.getCustomerName();
+        customerCode = inquiryResponseDTO.getCustomerCode();
+        email = inquiryResponseDTO.getEmail();
+        phone = inquiryResponseDTO.getPhone();
+        country = inquiryResponseDTO.getCountry();
+        corporate = inquiryResponseDTO.getCorporate();
+        salesPerson = inquiryResponseDTO.getSalesPerson();
+        inquiryType = inquiryResponseDTO.getInquiryType();
+        industry = inquiryResponseDTO.getIndustry();
+        corporationCode = inquiryResponseDTO.getCorporationCode();
+        productType = inquiryResponseDTO.getProductType();
+        progress = inquiryResponseDTO.getProgress();
+        customerRequestDate = inquiryResponseDTO.getCustomerRequestDate();
+        additionalRequests = inquiryResponseDTO.getAdditionalRequests();
+        responseDeadline = inquiryResponseDTO.getResponseDeadline();
     }
 }

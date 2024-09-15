@@ -42,15 +42,15 @@ public class LineItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public int getItemViewType(int position) {
         switch (type) {
-            case "CAR":
+            case "자동차":
                 return VIEW_TYPE_CAR;
-            case "COLD_ROLLED":
+            case "냉연":
                 return VIEW_TYPE_COLDROLLED;
-            case "HOT_ROLLED":
+            case "열연":
                 return VIEW_TYPE_HOTROLLED;
-            case "THICK_PLATE":
+            case "후판":
                 return VIEW_TYPE_THICKPLATE;
-            case "WIRE_ROD":
+            case "선재":
                 return VIEW_TYPE_WIREROD;
             default:
                 throw new IllegalArgumentException("Invalid type: " + type);

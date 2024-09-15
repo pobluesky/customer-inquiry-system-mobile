@@ -1,0 +1,6 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Set the solid color to a default color (e.g., blue) -->
+    <solid android:color="#098EB7" /> <!-- Default background color -->
+    <!-- Define rounded corners -->
+    <corners android:radius="16dp" /> <!-- Rounded corners with a radius of 16dp -->
+</shape>
