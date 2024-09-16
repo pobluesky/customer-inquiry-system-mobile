@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "729025315022",
+    "project_id": "pobluesky",
+    "storage_bucket": "pobluesky.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729025315022:android:8670aca8a09fd405a8509f",
+        "android_client_info": {
+          "package_name": "com.example.customer_inquiry_system_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1GeQCvMYMsa3QIpNuy2pRSzD2KoZ8CLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
