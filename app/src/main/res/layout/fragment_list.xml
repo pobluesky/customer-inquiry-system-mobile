@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/regular"
         android:text="Inquiry 목록"
+        android:paddingBottom="16dp"
         android:textColor="@color/black"
         android:gravity="center_horizontal"
         android:textSize="20dp" />

@@ -49,6 +49,10 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionHolder> {
         holder.status.setText(questionResponseDTO.getStatus());
 
         String status = questionResponseDTO.getStatus();
+
+        int paddingDp = (int) (5 * context.getResources().getDisplayMetrics().density);
+        holder.status.setPadding(paddingDp, paddingDp, paddingDp, paddingDp);
+
         if ("답변대기".equals(status)) {
             holder.status.setBackgroundResource(R.drawable.blue_background);
             holder.status.setTextColor(Color.WHITE);

@@ -82,6 +82,9 @@ public class QuestionDetailActivity extends AppCompatActivity {
                         answerTitle.setText("답변 대기중입니다");
                         answerContents.setText("");
 
+                        int paddingDp = (int) (5 * getResources().getDisplayMetrics().density);
+                        status.setPadding(paddingDp, paddingDp, paddingDp, paddingDp);
+
                         answerTitle.setBackgroundResource(R.drawable.rounded_box);
 
                         answerTitle.setGravity(Gravity.CENTER);
@@ -100,6 +103,9 @@ public class QuestionDetailActivity extends AppCompatActivity {
                     } else if ("답변완료".equals(questionResponseDTO.getStatus())) {
                         findViewById(R.id.imageView7).setVisibility(View.VISIBLE);
                         fetchAnswerByQuestionId(questionId);
+
+                        int paddingDp = (int) (5 * getResources().getDisplayMetrics().density);
+                        status.setPadding(paddingDp, paddingDp, paddingDp, paddingDp);
 
                         status.setBackgroundResource(R.drawable.red_background);
                         status.setTextColor(Color.WHITE);
