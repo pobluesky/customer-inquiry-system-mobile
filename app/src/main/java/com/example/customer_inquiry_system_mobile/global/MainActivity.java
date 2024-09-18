@@ -94,11 +94,6 @@ public class MainActivity extends AppCompatActivity {
                         String token = task.getResult();
                         Log.d("token",token);
                         System.out.println(token);
-                        Toast.makeText(
-                                MainActivity.this,
-                                "Your device registration token is" + token,
-                                Toast.LENGTH_SHORT
-                        ).show();
                     }
                 });
 

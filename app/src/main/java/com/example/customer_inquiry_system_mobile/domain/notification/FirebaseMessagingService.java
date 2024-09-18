@@ -47,8 +47,7 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
 
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this, channelId)
-                        .setSmallIcon(R.drawable.logo1)
-                        .setContentTitle("pobluesky")
+                        .setSmallIcon(R.drawable.logo)
                         .setContentText(messageBody)
                         .setPriority(NotificationCompat.PRIORITY_HIGH)
                         .setDefaults(Notification.DEFAULT_ALL)
@@ -70,5 +69,4 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
 
         notificationManager.notify(notificationId, notificationBuilder.build());
     }
-
 }

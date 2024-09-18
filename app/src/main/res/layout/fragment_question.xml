@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="15px"
+    android:padding="15dp"
     tools:context=".domain.question.fragment.QuestionFragment">
 
     <LinearLayout
@@ -17,12 +17,11 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:fontFamily="@font/regular"
-        android:paddingStart="25px"
-        android:paddingBottom="16dp"
         android:text="문의 목록"
+        android:paddingBottom="16dp"
         android:textColor="@color/black"
+        android:gravity="center_horizontal"
         android:textSize="20dp" />
 
     <FrameLayout

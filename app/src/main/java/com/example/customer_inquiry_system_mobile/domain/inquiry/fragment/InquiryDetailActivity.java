@@ -2,6 +2,7 @@ package com.example.customer_inquiry_system_mobile.domain.inquiry.fragment;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -123,6 +124,14 @@ public class InquiryDetailActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT
             ).show();
         }
+
+        ImageView revertIcon = findViewById(R.id.revertIcon);
+        revertIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void fetchInquiryById(Long inquiryId, String productType) {
@@ -145,12 +154,6 @@ public class InquiryDetailActivity extends AppCompatActivity {
 
                     updateUI(inquiryResponseDTO);
 
-                } else {
-                    Toast.makeText(
-                            InquiryDetailActivity.this,
-                            "데이터를 가져오는 데 실패했습니다.",
-                            Toast.LENGTH_SHORT
-                    ).show();
                 }
             }
 

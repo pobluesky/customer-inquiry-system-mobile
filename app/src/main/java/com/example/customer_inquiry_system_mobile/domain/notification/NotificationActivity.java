@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -78,23 +79,31 @@ public class NotificationActivity extends AppCompatActivity {
             }
         });
 
+        ImageView revertIcon = findViewById(R.id.revertIcon);
+        revertIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         updateButtonState(buttonUnread);
         fetchNotifications(true);
     }
 
     private void updateButtonState(Button clickedButton) {
         if (clickedButton == buttonUnread) {
-            buttonUnread.setTextColor(Color.parseColor("#03507D"));
+            buttonUnread.setTextColor(Color.parseColor("#8A9DD0"));
             buttonRead.setTextColor(Color.parseColor("#C1C1C1"));
 
-            findViewById(R.id.viewUnread).setBackgroundColor(Color.parseColor("#03507D"));
+            findViewById(R.id.viewUnread).setBackgroundColor(Color.parseColor("#8A9DD0"));
             findViewById(R.id.viewRead).setBackgroundColor(Color.parseColor("#C1C1C1"));
         } else if (clickedButton == buttonRead) {
             buttonUnread.setTextColor(Color.parseColor("#C1C1C1"));
-            buttonRead.setTextColor(Color.parseColor("#03507D"));
+            buttonRead.setTextColor(Color.parseColor("#8A9DD0"));
 
             findViewById(R.id.viewUnread).setBackgroundColor(Color.parseColor("#C1C1C1"));
-            findViewById(R.id.viewRead).setBackgroundColor(Color.parseColor("#03507D"));
+            findViewById(R.id.viewRead).setBackgroundColor(Color.parseColor("#8A9DD0"));
         }
     }
 

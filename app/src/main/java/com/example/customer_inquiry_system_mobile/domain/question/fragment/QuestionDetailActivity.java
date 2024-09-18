@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,13 +52,15 @@ public class QuestionDetailActivity extends AppCompatActivity {
         if (questionId != -1) {
             fetchQuestionById(questionId);
             fetchAnswerByQuestionId(questionId);
-        } else {
-            Toast.makeText(
-                    this,
-                    "유효하지 않은 문의 ID입니다.",
-                    Toast.LENGTH_SHORT
-            ).show();
         }
+
+        ImageView revertIcon = findViewById(R.id.revertIcon);
+        revertIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void fetchQuestionById(Long questionId) {
@@ -110,12 +113,6 @@ public class QuestionDetailActivity extends AppCompatActivity {
                         status.setBackgroundResource(R.drawable.red_background);
                         status.setTextColor(Color.WHITE);
                     }
-                } else {
-                    Toast.makeText(
-                            QuestionDetailActivity.this,
-                            "문의 데이터를 가져오는 데 실패했습니다.",
-                            Toast.LENGTH_SHORT
-                    ).show();
                 }
             }
 
