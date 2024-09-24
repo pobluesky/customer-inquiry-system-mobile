@@ -12,12 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp">
 
-        <!-- bell 크기만큼의 빈 View -->
-
-        <!-- 중앙에 배치된 이미지뷰 -->
-
-        <!-- 오른쪽에 고정된 bell 아이콘 -->
-
         <View
             android:id="@+id/emptySpace"
             android:layout_width="31dp"

@@ -1,238 +1,285 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="56dp">
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp">
+
+        <View
+            android:id="@+id/emptySpace"
+            android:layout_width="31dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="310dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/emptySpace"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/bell"
+            android:layout_width="33dp"
+            android:layout_height="42dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bell" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/revertIcon"
+        android:layout_width="37dp"
+        android:layout_height="33dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@drawable/revert" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="16dp">
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_below="@id/headerLayout"
+            android:paddingBottom="56dp">
 
-        <ImageView
-            android:id="@+id/revertIcon"
-            android:layout_width="36dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="8dp"
-            app:srcCompat="@drawable/revert" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/extraText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inquiry 상세 : " />
+
+                <TextView
+                    android:id="@+id/textViewInquiryId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="25dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_lavender_background"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/inquiryTypeDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:text="문의유형"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/customerNameDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:padding="8dp"
+                        android:text="고객사"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_margin="4dp">
+
+                    <TextView
+                        android:id="@+id/productTypeDetail"
+                        android:layout_width="70dp"
+                        android:layout_height="40dp"
+                        android:text="제품유형"
+                        android:padding="8dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_inquiry_detail"
+                    android:layout_margin="4dp">
+
+                    <TextView
+                        android:id="@+id/countryLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="국가"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/countryDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="나라"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_inquiry_detail"
+                    android:layout_margin="4dp">
+
+                    <TextView
+                        android:id="@+id/corporateLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="판매상사"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/corporateDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="상사"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_inquiry_detail"
+                    android:layout_margin="4dp">
+
+                    <TextView
+                        android:id="@+id/industryLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="산업분류"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/industryDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="산업"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/seeMoreIcon"
+                android:layout_width="80dp"
+                android:layout_height="28dp"
+                app:srcCompat="@drawable/see_more"
+                android:layout_gravity="center" />
 
             <TextView
-                android:id="@+id/extraText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Inquiry 상세 : " />
-
-        <TextView
-            android:id="@+id/textViewInquiryId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-    </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <LinearLayout
-                android:layout_width="25dp"
-                android:layout_height="40dp"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_lavender_background"
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
                 android:gravity="center"
-                android:padding="8dp">
-
-                <TextView
-                    android:id="@+id/inquiryTypeDetail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="45dp"
-                    android:padding="8dp"
-                    android:gravity="center"
-                    android:text="문의유형"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="8dp">
-
-                <TextView
-                    android:id="@+id/customerNameDetail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:padding="8dp"
-                    android:text="고객사"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="8dp"
-                android:layout_margin="4dp">
-
-                <TextView
-                    android:id="@+id/productTypeDetail"
-                    android:layout_width="70dp"
-                    android:layout_height="40dp"
-                    android:text="제품유형"
-                    android:padding="8dp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:background="@drawable/rounded_inquiry_detail"
-                android:layout_margin="4dp">
-
-                <TextView
-                    android:id="@+id/countryLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="국가"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/countryDetail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="나라"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="8dp"
-                android:background="@drawable/rounded_inquiry_detail"
-                android:layout_margin="4dp">
-
-                <TextView
-                    android:id="@+id/corporateLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="판매상사"
-                android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/corporateDetail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="상사"
-                android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="8dp"
-                android:background="@drawable/rounded_inquiry_detail"
-                android:layout_margin="4dp">
-
-                <TextView
-                    android:id="@+id/industryLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="산업분류"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/industryDetail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text="산업"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
-
-
-        <ImageView
-            android:id="@+id/seeMoreIcon"
-            android:layout_width="80dp"
-            android:layout_height="28dp"
-            app:srcCompat="@drawable/see_more"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:gravity="center"
-            android:text="Inquiry 내역"
-            android:textSize="17sp" />
-
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
+                android:text="Inquiry 내역"
+                android:textSize="17sp" />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fillViewport="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/viewPagerHeaders"
-                        android:layout_width="match_parent"
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:padding="8dp"/>
+                        android:orientation="vertical">
+
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/viewPagerHeaders"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewLineItems"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:padding="8dp"/>
-
-                </LinearLayout>
-                </HorizontalScrollView>
+                    android:layout_height="wrap_content" />
             </LinearLayout>
+            </HorizontalScrollView>
+            </ScrollView>
         </LinearLayout>
-    </ScrollView>
 </RelativeLayout>

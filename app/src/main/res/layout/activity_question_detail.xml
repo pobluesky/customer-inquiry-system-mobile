@@ -3,6 +3,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp">
+
+        <View
+            android:id="@+id/emptySpace"
+            android:layout_width="31dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="310dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/emptySpace"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/bell"
+            android:layout_width="33dp"
+            android:layout_height="42dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bell" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ImageView
         android:id="@+id/revertIcon"
         android:layout_width="37dp"
@@ -22,6 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/revertIcon"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="16dp"
         android:paddingBottom="16dp">
 
@@ -57,7 +94,21 @@
                     android:id="@+id/questionType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="문의 타입" />
+                    android:text="문의 타입"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:id="@+id/inquiryNoLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inquiry No. : "
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/inquiryNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"/>
 
                 <View
                     android:layout_width="0dp"
