@@ -142,6 +142,8 @@ public class InquiryDetailActivity extends AppCompatActivity {
             @Override
             public void onResponse(@NonNull Call<InquiryResponseDTO> call, @NonNull Response<InquiryResponseDTO> response) {
                 if (response.isSuccessful() && response.body() != null) {
+                    Log.d("API_SUCCESS", "서버 응답 성공: " + response.body().toString());
+
                     InquiryResponseDTO inquiryResponseDTO = response.body();
                     String productType = inquiryResponseDTO.getProductType();
 
@@ -151,11 +153,12 @@ public class InquiryDetailActivity extends AppCompatActivity {
                     );
 
                     recyclerViewLineItems.setAdapter(lineItemAdapter);
-
                     updateUI(inquiryResponseDTO);
-
+                } else {
+                    Log.e("API_RESPONSE_ERROR", "서버 응답 실패: " + response.code() + ", 메시지: " + response.message());
                 }
             }
+
 
             @Override
             public void onFailure(@NonNull Call<InquiryResponseDTO> call, @NonNull Throwable t) {

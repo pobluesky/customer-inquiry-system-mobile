@@ -5,6 +5,10 @@ import com.google.gson.annotations.SerializedName;
 
 public class QuestionResponseDTO {
 
+    @SerializedName("inquiryId")
+    @Expose
+    private Long inquiryId;
+
     @SerializedName("questionId")
     @Expose
     private Long questionId;
@@ -28,6 +32,10 @@ public class QuestionResponseDTO {
     @SerializedName("contents")
     @Expose
     private String contents;
+
+    public Long getInquiryId() {
+        return inquiryId;
+    }
 
     public Long getQuestionId() {
         return questionId;

@@ -20,6 +20,8 @@ import com.example.customer_inquiry_system_mobile.domain.question.api.QuestionAP
 import com.example.customer_inquiry_system_mobile.domain.question.dto.QuestionResponseDTO;
 import com.example.customer_inquiry_system_mobile.global.RetrofitService;
 
+import java.util.Objects;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,6 +29,8 @@ import retrofit2.Response;
 public class QuestionDetailActivity extends AppCompatActivity {
 
     private TextView
+                    inquiryNoLabel,
+                    inquiryNo,
                     title,
                     status,
                     type,
@@ -39,6 +43,8 @@ public class QuestionDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_detail);
 
+        inquiryNoLabel = findViewById(R.id.inquiryNoLabel);
+        inquiryNo = findViewById(R.id.inquiryNo);
         type = findViewById(R.id.questionType);
         status = findViewById(R.id.questionStatus);
         title = findViewById(R.id.questionTitle);
@@ -48,9 +54,10 @@ public class QuestionDetailActivity extends AppCompatActivity {
         answerContents = findViewById(R.id.answerContents);
 
         Long questionId = getIntent().getLongExtra("question_id", -1);
+        Long inquiryId = getIntent().getLongExtra("inquiry_id", -1);
 
         if (questionId != -1) {
-            fetchQuestionById(questionId);
+            fetchQuestionById(questionId, inquiryId);
             fetchAnswerByQuestionId(questionId);
         }
 
@@ -63,7 +70,7 @@ public class QuestionDetailActivity extends AppCompatActivity {
         });
     }
 
-    private void fetchQuestionById(Long questionId) {
+    private void fetchQuestionById(Long questionId, Long inquiryId) {
         RetrofitService retrofitService = new RetrofitService(null);
         QuestionAPI questionAPI = retrofitService.getRetrofit().create(QuestionAPI.class);
 
@@ -80,6 +87,11 @@ public class QuestionDetailActivity extends AppCompatActivity {
                     status.setText(questionResponseDTO.getStatus());
                     title.setText(questionResponseDTO.getTitle());
                     questionContents.setText(questionResponseDTO.getContents());
+
+                    if(inquiryId != null && Objects.equals(questionResponseDTO.getType(), "주문문의")){
+                        inquiryNo.setText(String.valueOf(inquiryId));
+                        inquiryNoLabel.setVisibility(View.VISIBLE);
+                    }
 
                     if ("답변대기".equals(questionResponseDTO.getStatus())) {
                         answerTitle.setText("답변 대기중입니다");

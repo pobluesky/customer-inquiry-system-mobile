@@ -3,6 +3,7 @@ package com.example.customer_inquiry_system_mobile.domain.question.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,10 +62,18 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionHolder> {
             holder.status.setTextColor(Color.WHITE);
         }
 
+        Log.d("QuestionAdapter", "Position: " + position);
+        Log.d("QuestionAdapter", "Question Type: " + questionResponseDTO.getType());
+        Log.d("QuestionAdapter", "inquiryId from DTO: " + questionResponseDTO.getInquiryId());
+
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, QuestionDetailActivity.class);
-
             intent.putExtra("question_id", questionResponseDTO.getQuestionId());
+
+            if ("주문문의".equals(questionResponseDTO.getType()) && questionResponseDTO.getInquiryId() != null) {
+                intent.putExtra("inquiry_id", questionResponseDTO.getInquiryId());
+            }
+
             context.startActivity(intent);
         });
     }
