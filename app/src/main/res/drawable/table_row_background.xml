@@ -1,0 +1,5 @@
+<!-- res/drawable/table_row_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF"/> <!-- 행 배경색 -->
+    <stroke android:width="1dp" android:color="#8A9DD0"/> <!-- 경계 색상 -->
+</shape>

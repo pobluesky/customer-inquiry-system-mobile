@@ -1,0 +1,16 @@
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="821dp"
+    android:height="1686dp"
+    android:viewportWidth="421"
+    android:viewportHeight="1186">
+
+    <group>
+        <!-- 배경 모양 및 테두리 설정 -->
+        <path
+            android:pathData="M20 0H401C412.046 0 421 8.95431 421 20V1166C421 1177.05 412.046 1186 401 1186H20C8.95431 1186 0 1177.05 0 1166V20C0 8.95431 8.95431 0 20 0Z"
+            android:fillColor="#FFFFFF"
+            android:strokeWidth="2"
+            android:strokeColor="#5903507D" />
+    </group>
+</vector>
