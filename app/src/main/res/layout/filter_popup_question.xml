@@ -45,7 +45,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="의뢰일자"
+        android:text="등록일자"
         android:textSize="16sp"
         android:paddingBottom="8dp"
         android:layout_marginTop="8dp"
@@ -171,7 +171,7 @@
             android:fontFamily="@font/semibold" />
 
         <Spinner
-            android:id="@+id/spinner_inquiry_type"
+            android:id="@+id/spinner_question_type"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -181,105 +181,6 @@
 
     <View
         android:id="@+id/line_175"
-        android:layout_width="match_parent"
-        android:layout_height="0.7dp"
-        android:background="@drawable/line_filter" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="9dp"
-        android:paddingBottom="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="산업 유형                   "
-            android:textSize="16sp"
-            android:paddingTop="5dp"
-            android:gravity="center"
-            android:paddingBottom="8dp"
-            android:fontFamily="@font/semibold" />
-
-        <Spinner
-            android:id="@+id/spinner_industry_type"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/edit_text_background"
-            android:fontFamily="@font/light" />
-    </LinearLayout>
-
-    <View
-        android:id="@+id/line_166"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@drawable/line_filter" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="8dp"
-        android:paddingBottom="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="판매 계약자               "
-            android:textSize="16sp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:fontFamily="@font/semibold" />
-
-        <EditText
-            android:id="@+id/editText_seller"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/edit_text_background"
-            android:hint="Search"
-            android:padding="8dp"
-            android:fontFamily="@font/light" />
-    </LinearLayout>
-
-    <View
-        android:id="@+id/line_167"
-        android:layout_width="match_parent"
-        android:layout_height="0.7dp"
-        android:background="@drawable/line_filter" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="8.7dp"
-        android:paddingBottom="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="제품 유형                   "
-            android:textSize="16sp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:fontFamily="@font/semibold"/>
-
-        <Spinner
-            android:id="@+id/spinner_product_type"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/edit_text_background"
-            android:fontFamily="@font/light" />
-    </LinearLayout>
-
-    <View
-        android:id="@+id/line_168"
         android:layout_width="match_parent"
         android:layout_height="0.7dp"
         android:background="@drawable/line_filter" />
@@ -329,14 +230,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="판매 담당자명           "
+            android:text="제목                           "
             android:textSize="16sp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:fontFamily="@font/semibold" />
 
         <EditText
-            android:id="@+id/editText_sales_manager"
+            android:id="@+id/editText_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -345,47 +246,6 @@
             android:padding="8dp"
             android:fontFamily="@font/light" />
     </LinearLayout>
-
-    <View
-        android:id="@+id/line_199"
-        android:layout_width="match_parent"
-        android:layout_height="0.7dp"
-        android:background="@drawable/line_filter" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingBottom="8dp"
-        android:layout_marginTop="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="품질 담당자명           "
-            android:textSize="16sp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:fontFamily="@font/semibold" />
-
-        <EditText
-            android:id="@+id/editText_quality_manager"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/edit_text_background"
-            android:hint="Search"
-            android:padding="8dp"
-            android:fontFamily="@font/light" />
-    </LinearLayout>
-
-    <View
-        android:id="@+id/line_170"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@drawable/line_filter"
-        android:layout_marginTop="8dp"/>
 
     <Button
         android:id="@+id/btn_search"
