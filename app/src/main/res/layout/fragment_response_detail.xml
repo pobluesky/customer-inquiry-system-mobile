@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/semibold"
+        android:textSize="24sp"
+        android:text="1차 검토 내용 " />
+
+    <TextView
+        android:id="@+id/firstReview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/regular"
+        android:textSize="18sp"
+        android:paddingBottom="40dp"
+        android:text="1차 검토 내용 " />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/semibold"
+        android:textSize="24sp"
+        android:text="최종 검토" />
+
+    <TextView
+        android:id="@+id/finalReview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/regular"
+        android:textSize="18sp"
+        android:text="최종 검토 내용 " />
+
+</LinearLayout>

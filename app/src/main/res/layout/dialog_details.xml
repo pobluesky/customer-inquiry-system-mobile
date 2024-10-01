@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/rounded_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="Inquiry No : "
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/inquiryId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:fontFamily="@font/bold"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="30dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="130dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/close" />
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        android:background="@android:color/white">
+
+        <TableRow
+            android:background="@drawable/table_row_background">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="고객 이름"
+                android:background="@drawable/cell_border"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/name"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="고객 코드"
+                android:background="@drawable/cell_border"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/customerCode"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+        </TableRow>
+
+        <TableRow
+            android:background="@drawable/table_row_background">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="판매 상사"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/corporate"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="산업 분류"
+                android:background="@drawable/cell_border"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/industry"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+        </TableRow>
+
+        <TableRow
+            android:background="@drawable/table_row_background">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="법인 코드"
+                android:background="@drawable/cell_border"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/corporationCode"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="제품 유형"
+                android:background="@drawable/cell_border"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/productType"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+        </TableRow>
+
+        <TableRow
+            android:background="@drawable/table_row_background">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="고객사명"
+                android:background="@drawable/cell_border"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/customerName"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+        </TableRow>
+
+        <TableRow
+            android:background="@drawable/table_row_background">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="이메일"
+                android:background="@drawable/cell_border"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/email"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+        </TableRow>
+
+        <TableRow
+            android:background="@drawable/table_row_background">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="연락처"
+                android:background="@drawable/cell_border"
+
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/phone"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+        </TableRow>
+
+        <TableRow
+            android:background="@drawable/table_row_background">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="국가"
+                android:background="@drawable/cell_border"
+                android:fontFamily="@font/semibold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/country"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+        </TableRow>
+
+        <TableRow
+            android:background="@drawable/table_row_background">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell_border"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="판매 계약자"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/salesPerson"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+        </TableRow>
+
+
+        <TableRow
+            android:background="@drawable/table_row_background">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="문의 유형"
+                android:background="@drawable/cell_border"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/inquiryType"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+        </TableRow>
+
+        <TableRow
+            android:background="@drawable/table_row_background">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="진행 상태"
+                android:background="@drawable/cell_border"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/progress"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+        </TableRow>
+
+        <TableRow
+            android:background="@drawable/table_row_background">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="고객 요청 날짜"
+                android:background="@drawable/cell_border"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/customerRequestDate"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+        </TableRow>
+
+        <TableRow
+            android:background="@drawable/table_row_background">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="추가 요청"
+                android:background="@drawable/cell_border"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/additionalRequests"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+        </TableRow>
+
+        <TableRow
+            android:background="@drawable/table_row_background">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:text="응답 기한"
+                android:background="@drawable/cell_border"
+                android:fontFamily="@font/semibold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:gravity="center"
+                android:id="@+id/responseDeadline"
+                android:textSize="14sp"
+                android:fontFamily="@font/regular"/>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

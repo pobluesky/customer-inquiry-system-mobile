@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/regular"
-            android:text="Inquiry 목록"
+            android:text="  Inquiry 목록"
             android:paddingBottom="16dp"
             android:textColor="@color/black"
             android:gravity="start"
@@ -36,12 +36,10 @@
             android:layout_height="33dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/rounded_square_background"
-            android:contentDescription="Filter Icon"
             android:padding="8dp"
             android:src="@drawable/filter" />
 
     </LinearLayout>
-
 
     <FrameLayout
         android:layout_width="match_parent"
