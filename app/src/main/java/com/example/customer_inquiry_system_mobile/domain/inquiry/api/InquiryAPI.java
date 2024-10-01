@@ -1,6 +1,7 @@
 package com.example.customer_inquiry_system_mobile.domain.inquiry.api;
 
 import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquiryResponseDTO;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.ReviewResponseDTO;
 
 import java.util.List;
 import java.util.Map;
@@ -24,5 +25,8 @@ public interface InquiryAPI {
             @Query("sortBy") String sortBy,
             @QueryMap Map<String, String> options
     );
+
+    @GET("mobile/api/reviews/{id}")
+    Call<ReviewResponseDTO> getReviewById(@Path("id") Long inquiryId);
 }
 
