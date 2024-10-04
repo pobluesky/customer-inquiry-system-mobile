@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#FFFFFF" /> <!-- Background color, change as needed -->
-    <corners android:radius="10dp" /> <!-- Corner radius -->
-    <padding
-        android:bottom="8dp"
-        android:left="16dp"
-        android:right="16dp"
-        android:top="8dp" />
+    <corners android:radius="70dp" /> <!-- Corner radius -->
 </shape>

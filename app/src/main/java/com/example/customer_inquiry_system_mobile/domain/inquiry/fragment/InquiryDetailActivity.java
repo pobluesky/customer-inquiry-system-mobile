@@ -1,6 +1,7 @@
 package com.example.customer_inquiry_system_mobile.domain.inquiry.fragment;
 
 import android.app.AlertDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -44,13 +45,9 @@ public class InquiryDetailActivity extends AppCompatActivity {
             inquiryIdDetail,
             inquiryTypeDetail,
             customerNameDetail,
-            productTypeDetail,
-            corporateDetail,
-            countryDetail,
-            industryDetail;
+            productTypeDetail;
 
     private String
-            inquiryId,
             name,
             customerName,
             customerCode,
@@ -72,8 +69,7 @@ public class InquiryDetailActivity extends AppCompatActivity {
 
     private LineItemAdapter lineItemAdapter;
 
-    private Handler handler = new Handler();
-    private Runnable bounceRunnable;
+    private View indicatorDetail, indicatorInquiry, indicatorResponse;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -83,18 +79,10 @@ public class InquiryDetailActivity extends AppCompatActivity {
         inquiryIdDetail = findViewById(R.id.textViewInquiryId);
         productTypeDetail = findViewById(R.id.productTypeDetail);
         customerNameDetail = findViewById(R.id.customerNameDetail);
-        countryDetail = findViewById(R.id.countryDetail);
         inquiryTypeDetail = findViewById(R.id.inquiryTypeDetail);
-        corporateDetail = findViewById(R.id.corporateDetail);
-        industryDetail = findViewById(R.id.industryDetail);
 
         recyclerViewLineItems = findViewById(R.id.recyclerViewLineItems);
         recyclerViewLineItems.setLayoutManager(new LinearLayoutManager(this));
-
-        ImageView seeMoreIcon = findViewById(R.id.seeMoreIcon);
-        seeMoreIcon.setOnClickListener(v -> {
-            showDetailsDialog();
-        });
 
         String productType = getIntent().getStringExtra("product_type");
         if (productType != null) {
@@ -117,30 +105,61 @@ public class InquiryDetailActivity extends AppCompatActivity {
             ).show();
         }
 
+        indicatorDetail = findViewById(R.id.indicatorDetail);
+        indicatorInquiry = findViewById(R.id.indicatorInquiry);
+        indicatorResponse = findViewById(R.id.indicatorResponse);
+
         LinearLayout sectionInquiry = findViewById(R.id.sectionInquiry);
         LinearLayout sectionResponse = findViewById(R.id.sectionResponse);
+        LinearLayout sectionDetail = findViewById(R.id.sectionDetail);
 
         Button buttonInquiry = findViewById(R.id.buttonInquiry);
+        Button buttonDetail = findViewById(R.id.buttonDetail);
         Button buttonResponse = findViewById(R.id.buttonResponse);
 
-        buttonInquiry.setSelected(true);
+        buttonDetail.setSelected(true);
+
+        buttonDetail.setOnClickListener(v -> {
+            sectionDetail.setVisibility(View.VISIBLE);
+            sectionInquiry.setVisibility(View.GONE);
+            sectionResponse.setVisibility(View.GONE);
+
+            Log.d("TAG", "sectionDetail visibility: " + sectionDetail.getVisibility()); // 현재 visibility 확인
+
+            buttonInquiry.setSelected(false);
+            buttonDetail.setSelected(true);
+            buttonResponse.setSelected(false);
+
+            updateIndicator(indicatorDetail);
+        });
 
         buttonInquiry.setOnClickListener(v -> {
             sectionInquiry.setVisibility(View.VISIBLE);
             sectionResponse.setVisibility(View.GONE);
+            sectionDetail.setVisibility(View.GONE);
+
             buttonInquiry.setSelected(true);
+            buttonDetail.setSelected(false);
             buttonResponse.setSelected(false);
+
+            updateIndicator(indicatorInquiry);
         });
 
         buttonResponse.setOnClickListener(v -> {
             sectionInquiry.setVisibility(View.GONE);
             sectionResponse.setVisibility(View.VISIBLE);
+            sectionDetail.setVisibility(View.GONE);
+
             buttonInquiry.setSelected(false);
+            buttonDetail.setSelected(false);
             buttonResponse.setSelected(true);
+
             fetchReviewById(inquiryId);
+            updateIndicator(indicatorResponse);
         });
 
-        sectionInquiry.setVisibility(View.VISIBLE);
+        sectionInquiry.setVisibility(View.GONE);
+        sectionDetail.setVisibility(View.VISIBLE);
         sectionResponse.setVisibility(View.GONE);
 
         ImageView revertIcon = findViewById(R.id.revertIcon);
@@ -152,31 +171,34 @@ public class InquiryDetailActivity extends AppCompatActivity {
         });
     }
 
-    private void showDetailsDialog() {
-        View dialogView = getLayoutInflater().inflate(R.layout.dialog_details, null);
+    private void updateIndicator(View selectedIndicator) {
+        // 모든 작은 네모를 기본 색상으로 초기화
+        indicatorDetail.setBackgroundColor(Color.WHITE);
+        indicatorInquiry.setBackgroundColor(Color.WHITE);
+        indicatorResponse.setBackgroundColor(Color.WHITE);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setView(dialogView);
+        // 선택된 네모의 색상 변경
+        selectedIndicator.setBackgroundColor(Color.parseColor("#B0CBFF")); // 선택된 색상
+    }
 
-        TextView textViewInquiryId = dialogView.findViewById(R.id.inquiryId);
-        TextView textViewCustomerName = dialogView.findViewById(R.id.customerName);
-        TextView textViewCustomerCode = dialogView.findViewById(R.id.customerCode);
-        TextView textViewName = dialogView.findViewById(R.id.name);
-        TextView textViewEmail = dialogView.findViewById(R.id.email);
-        TextView textViewPhone = dialogView.findViewById(R.id.phone);
-        TextView textViewCountry = dialogView.findViewById(R.id.country);
-        TextView textViewCorporate = dialogView.findViewById(R.id.corporate);
-        TextView textViewSalesPerson = dialogView.findViewById(R.id.salesPerson);
-        TextView textViewInquiryType = dialogView.findViewById(R.id.inquiryType);
-        TextView textViewIndustry = dialogView.findViewById(R.id.industry);
-        TextView textViewCorporationCode = dialogView.findViewById(R.id.corporationCode);
-        TextView textViewProductType = dialogView.findViewById(R.id.productType);
-        TextView textViewProgress = dialogView.findViewById(R.id.progress);
-        TextView textViewCustomerRequestDate = dialogView.findViewById(R.id.customerRequestDate);
-        TextView textViewAdditionalRequests = dialogView.findViewById(R.id.additionalRequests);
-        TextView textViewResponseDeadline = dialogView.findViewById(R.id.responseDeadline);
+    private void setDetails() {
+        TextView textViewCustomerName = findViewById(R.id.customerName);
+        TextView textViewCustomerCode = findViewById(R.id.customerCode);
+        TextView textViewName = findViewById(R.id.name);
+        TextView textViewEmail = findViewById(R.id.email);
+        TextView textViewPhone = findViewById(R.id.phone);
+        TextView textViewCountry = findViewById(R.id.country);
+        TextView textViewCorporate = findViewById(R.id.corporate);
+        TextView textViewSalesPerson = findViewById(R.id.salesPerson);
+        TextView textViewInquiryType = findViewById(R.id.inquiryType);
+        TextView textViewIndustry = findViewById(R.id.industry);
+        TextView textViewCorporationCode = findViewById(R.id.corporationCode);
+        TextView textViewProductType = findViewById(R.id.productType);
+        TextView textViewProgress = findViewById(R.id.progress);
+        TextView textViewCustomerRequestDate = findViewById(R.id.customerRequestDate);
+        TextView textViewAdditionalRequests = findViewById(R.id.additionalRequests);
+        TextView textViewResponseDeadline = findViewById(R.id.responseDeadline);
 
-        textViewInquiryId.setText(inquiryId);
         textViewCustomerName.setText(customerName);
         textViewCustomerCode.setText(customerCode);
         textViewName.setText(name);
@@ -193,13 +215,6 @@ public class InquiryDetailActivity extends AppCompatActivity {
         textViewInquiryType.setText(inquiryType);
         textViewIndustry.setText(industry);
         textViewCorporationCode.setText(corporationCode);
-
-        AlertDialog dialog = builder.create();
-
-        ImageView buttonClose = dialogView.findViewById(R.id.img_close);
-        buttonClose.setOnClickListener(v -> dialog.dismiss());
-
-        dialog.show();
     }
 
     private void fetchInquiryById(Long inquiryId, String productType) {
@@ -325,11 +340,7 @@ public class InquiryDetailActivity extends AppCompatActivity {
                 inquiryTypeDetail.setText(inquiryResponseDTO.getInquiryType());
                 customerNameDetail.setText(inquiryResponseDTO.getCustomerName());
                 productTypeDetail.setText(inquiryResponseDTO.getProductType());
-                corporateDetail.setText(inquiryResponseDTO.getCorporationCode());
-                countryDetail.setText(inquiryResponseDTO.getCountry());
-                industryDetail.setText(inquiryResponseDTO.getIndustry());
 
-        inquiryId = String.valueOf(inquiryResponseDTO.getInquiryId());
         name = inquiryResponseDTO.getName();
         customerName = inquiryResponseDTO.getCustomerName();
         customerCode = inquiryResponseDTO.getCustomerCode();
@@ -346,6 +357,8 @@ public class InquiryDetailActivity extends AppCompatActivity {
         customerRequestDate = inquiryResponseDTO.getCustomerRequestDate();
         additionalRequests = inquiryResponseDTO.getAdditionalRequests();
         responseDeadline = inquiryResponseDTO.getResponseDeadline();
+
+        setDetails();
     }
 
     private void updateReviewUI(ReviewResponseDTO reviewResponseDTO) {

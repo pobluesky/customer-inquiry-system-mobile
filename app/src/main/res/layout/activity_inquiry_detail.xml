@@ -66,21 +66,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="16dp">
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginBottom="16dp">
 
                 <TextView
-                    android:id="@+id/extraText"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textView3"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="  Inquiry 목록 > Inquiry 상세 : " />
+                    android:layout_weight="1"
+                    android:fontFamily="@font/regular"
+                    android:text="  INQUIRY 전체 조회"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/black"
+                    android:gravity="start"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/textViewInquiryId"
@@ -155,117 +153,498 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:gravity="center">
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:background="@drawable/rounded_inquiry_detail"
-                    android:layout_margin="4dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/countryLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:text="국가"
-                        android:textStyle="bold" />
+                    <Button
+                        android:id="@+id/buttonDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_tab_button"
+                        android:text="상세정보"
+                        android:textColor="@color/selector_tab_text_color" />
 
-                    <TextView
-                        android:id="@+id/countryDetail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:text="나라"
-                        android:textStyle="bold" />
+                    <Button
+                        android:id="@+id/buttonInquiry"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_tab_button"
+                        android:textColor="@color/selector_tab_text_color"
+                        android:text="Inquiry 내역" />
+
+                    <Button
+                        android:id="@+id/buttonResponse"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_tab_button"
+                        android:textColor="@color/selector_tab_text_color"
+                        android:text="담당자 답변" />
                 </LinearLayout>
 
+                <!-- 버튼 아래에 각각의 작은 네모 추가 -->
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:background="@drawable/rounded_inquiry_detail"
-                    android:layout_margin="4dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/corporateLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:text="판매상사"
-                        android:textStyle="bold" />
+                    <View
+                        android:id="@+id/indicatorDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="8dp"
+                        android:background="@android:color/white"
+                        android:layout_weight="1" />
 
-                    <TextView
-                        android:id="@+id/corporateDetail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:text="상사"
-                        android:textStyle="bold" />
+                    <View
+                        android:id="@+id/indicatorInquiry"
+                        android:layout_width="0dp"
+                        android:layout_height="8dp"
+                        android:background="@android:color/white"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:id="@+id/indicatorResponse"
+                        android:layout_width="0dp"
+                        android:layout_height="8dp"
+                        android:background="@android:color/white"
+                        android:layout_weight="1" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:background="@drawable/rounded_inquiry_detail"
-                    android:layout_margin="4dp">
-
-                    <TextView
-                        android:id="@+id/industryLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:text="산업분류"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/industryDetail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:text="산업"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                <!-- 아래 줄 추가 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/seeMoreIcon"
-                android:layout_width="80dp"
-                android:layout_height="28dp"
-                app:srcCompat="@drawable/see_more"
-                android:layout_gravity="center" />
 
-            <LinearLayout
+
+
+            <ScrollView
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/sectionDetail"
+                android:layout_width="298dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="29dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/buttonInquiry"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_tab_button"
-                    android:textColor="@color/selector_tab_text_color"
-                    android:text="Inquiry 내역"
-                    />
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/rectangle_detail">
 
-                <Button
-                    android:id="@+id/buttonResponse"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_tab_button"
-                    android:textColor="@color/selector_tab_text_color"
-                    android:text="담당자 답변"
-                     />
+                    <!-- 고객 이름 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:text="고객 이름"
+                            android:fontFamily="@font/semibold"/>
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/regular"/>
+                    </LinearLayout>
+
+                    <!-- 고객 코드 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:text="의뢰인 이메일"
+                            android:fontFamily="@font/semibold"/>
+
+                        <TextView
+                            android:id="@+id/email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/regular"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:text="의로인 연락처"
+                            android:fontFamily="@font/semibold"/>
+
+                        <TextView
+                            android:id="@+id/phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/regular"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/rectangle_detail">
+
+                        <!-- 고객 이름 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="고객사명"
+                                android:fontFamily="@font/semibold"/>
+
+                            <TextView
+                                android:id="@+id/customerName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/regular"/>
+                        </LinearLayout>
+
+                        <!-- 고객 코드 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="고객 코드"
+                                android:fontFamily="@font/semibold"/>
+
+                            <TextView
+                                android:id="@+id/customerCode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/regular"/>
+                        </LinearLayout>
+
+                        <!-- 판매 상사 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="판매 상사"
+                                android:fontFamily="@font/semibold"/>
+
+                            <TextView
+                                android:id="@+id/corporate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/regular"/>
+                        </LinearLayout>
+
+                        <!-- 산업 분류 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="산업 분류"
+                                android:fontFamily="@font/semibold"/>
+
+                            <TextView
+                                android:id="@+id/industry"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/regular"/>
+                        </LinearLayout>
+
+                        <!-- 산업 분류 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:text="법인 코드"
+                                android:fontFamily="@font/semibold"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:id="@+id/corporationCode"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/regular"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:text="제품 유형"
+                                android:fontFamily="@font/semibold"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:id="@+id/productType"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/regular"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:text="국가"
+                                android:fontFamily="@font/semibold" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:id="@+id/country"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/regular"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:text="판매 계약자"
+                                android:fontFamily="@font/semibold"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:id="@+id/salesPerson"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/regular"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:text="문의 유형"
+                                android:fontFamily="@font/semibold"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:id="@+id/inquiryType"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/regular"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:text="진행 상태"
+                                android:fontFamily="@font/semibold"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:id="@+id/progress"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/regular"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:text="고객 요청 날짜"
+                                android:fontFamily="@font/semibold"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:id="@+id/customerRequestDate"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/regular"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:text="추가 요청"
+                                android:fontFamily="@font/semibold"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:id="@+id/additionalRequests"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/regular"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:text="응답 기한"
+                                android:fontFamily="@font/semibold"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:id="@+id/responseDeadline"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/regular"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
             </LinearLayout>
+        </ScrollView>
 
     <LinearLayout
         android:id="@+id/sectionInquiry"
@@ -347,5 +726,5 @@
                     android:textSize="18sp"
                     android:text="최종 검토 내용 " />
         </LinearLayout>
-    </LinearLayout>
+        </LinearLayout>
 </RelativeLayout>

@@ -3,6 +3,8 @@ package com.example.customer_inquiry_system_mobile.domain.inquiry.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +45,29 @@ public class InquiryAdapter extends RecyclerView.Adapter<InquiryHolder> {
         holder.inquiryType.setText(inquiryResponseDTO.getInquiryType());
         holder.progress.setText(inquiryResponseDTO.getProgress());
         holder.customerName.setText(inquiryResponseDTO.getCustomerName());
+
+        GradientDrawable drawable = new GradientDrawable();
+        drawable.setShape(GradientDrawable.RECTANGLE); // 사각형 모양
+        drawable.setCornerRadius(70); // 모서리 반경 설정
+
+        if ("견적문의".equals(inquiryResponseDTO.getInquiryType())) {
+            drawable.setColor(Color.parseColor("#F8EDDB"));
+        } else if ("품질/견적문의".equals(inquiryResponseDTO.getInquiryType())) {
+            drawable.setColor(Color.parseColor("#C4DEDA"));
+        } else {
+            drawable.setColor(Color.TRANSPARENT); // 투명색 설정
+        }
+
+        holder.inquiryType.setBackground(drawable); // 버튼에 설정
+
+        GradientDrawable progressDrawable = new GradientDrawable();
+        progressDrawable.setShape(GradientDrawable.RECTANGLE);
+        progressDrawable.setCornerRadius(70);
+        progressDrawable.setColor(Color.parseColor("#03507D")); // 배경색 설정
+
+        // TextView에 배경 설정
+        holder.progress.setBackground(progressDrawable);
+        holder.progress.setTextColor(Color.parseColor("#FFFFFF")); // 글자색 설정
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, InquiryDetailActivity.class);

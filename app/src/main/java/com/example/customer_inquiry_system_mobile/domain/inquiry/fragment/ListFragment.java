@@ -180,7 +180,6 @@ public class ListFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // 아무 항목도 선택되지 않았을 때 처리
             }
         });
     }
@@ -357,18 +356,24 @@ public class ListFragment extends Fragment {
                 if (response.isSuccessful() && response.body() != null) {
                     populateListView(response.body());
                 } else {
-                    Toast.makeText(getContext(), "Failed to load inquiries: " + response.message(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(
+                            getContext(),
+                            "Failed to load inquiries: " + response.message(),
+                            Toast.LENGTH_LONG
+                    ).show();
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<List<InquiryResponseDTO>> call, @NonNull Throwable t) {
-                Toast.makeText(getContext(), "Failed to load inquiries", Toast.LENGTH_LONG).show();
+                Toast.makeText(
+                        getContext(),
+                        "Failed to load inquiries",
+                        Toast.LENGTH_LONG
+                ).show();
             }
         });
     }
-
-
 
     private void setDimBackground(boolean show) {
         if (show) {
