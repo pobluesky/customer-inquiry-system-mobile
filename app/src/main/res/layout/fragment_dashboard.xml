@@ -55,7 +55,7 @@
                     android:layout_width="20sp"
                     android:layout_height="20sp"
                     android:layout_marginEnd="8sp"
-                    android:background="#0079FF" />
+                    android:background="#0678BF" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
                     android:layout_height="20sp"
                     android:layout_marginStart="16sp"
                     android:layout_marginEnd="8sp"
-                    android:background="#FF0060" />
+                    android:background="#F28080" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -152,7 +152,7 @@
                                 android:layout_width="20sp"
                                 android:layout_height="20sp"
                                 android:layout_marginEnd="8sp"
-                                android:background="#B3C8CF" />
+                                android:background="#25D9C7" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -172,7 +172,7 @@
                                 android:layout_width="20sp"
                                 android:layout_height="20sp"
                                 android:layout_marginEnd="8sp"
-                                android:background="#00A9FF" />
+                                android:background="#0678BF" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -202,7 +202,7 @@
                                 android:layout_width="20sp"
                                 android:layout_height="20sp"
                                 android:layout_marginEnd="8sp"
-                                android:background="#B3C8CF" />
+                                android:background="#F2E9BB" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -222,7 +222,7 @@
                                 android:layout_width="20sp"
                                 android:layout_height="20sp"
                                 android:layout_marginEnd="8sp"
-                                android:background="#F7418F" />
+                                android:background="#F28080" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -276,7 +276,7 @@
                     android:layout_width="20sp"
                     android:layout_height="20sp"
                     android:layout_marginEnd="8sp"
-                    android:background="#00DFA2" />
+                    android:background="#0678BF" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -289,7 +289,7 @@
                     android:layout_height="20sp"
                     android:layout_marginStart="16sp"
                     android:layout_marginEnd="8sp"
-                    android:background="#FF0060" />
+                    android:background="#F28080" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -339,7 +339,7 @@
                     android:layout_width="20sp"
                     android:layout_height="20sp"
                     android:layout_marginEnd="8sp"
-                    android:background="#00DFA2" />
+                    android:background="#0678BF" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -352,7 +352,7 @@
                     android:layout_height="20sp"
                     android:layout_marginStart="16sp"
                     android:layout_marginEnd="8sp"
-                    android:background="#FF0066" />
+                    android:background="#F28080" />
 
                 <TextView
                     android:layout_width="wrap_content"
