@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Filter"
+            android:text="검색 조건"
             android:textSize="24sp"
             android:textStyle="bold"
             android:paddingBottom="8dp"
@@ -393,6 +393,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="검색"
+        android:background="@drawable/rounded_filter_search"
         android:fontFamily="@font/semibold" />
 
 </LinearLayout>

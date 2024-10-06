@@ -3,11 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="75dp"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
     android:background="@drawable/item_border">
+
+    <TextView
+        android:id="@+id/customInquiryId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/light"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/inquiryListItem_InquiryType"
@@ -17,12 +28,13 @@
         android:background="@drawable/button_rounded_background"
         android:fontFamily="@font/semibold"
         android:gravity="center"
-        android:text="inquiryListItem_InquiryType"
+        android:text="InquiryType"
         android:textColor="#505050"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/customInquiryId"
+        app:layout_constraintVertical_bias="0.111" />
 
     <TextView
         android:id="@+id/inquiryListItem_Progress"
@@ -31,7 +43,7 @@
         android:layout_margin="20dp"
         android:layout_marginEnd="2dp"
         android:fontFamily="@font/semibold"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:text="inquiryListItem_Progress"
         android:textSize="14sp"
         android:padding="8dp"
@@ -51,6 +63,4 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

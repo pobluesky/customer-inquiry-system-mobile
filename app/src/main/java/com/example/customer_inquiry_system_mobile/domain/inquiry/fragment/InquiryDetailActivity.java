@@ -1,9 +1,9 @@
 package com.example.customer_inquiry_system_mobile.domain.inquiry.fragment;
 
-import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,6 +27,7 @@ import com.example.customer_inquiry_system_mobile.domain.inquiry.adapter.LineIte
 import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.InquiryResponseDTO;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.api.InquiryAPI;
 import com.example.customer_inquiry_system_mobile.domain.inquiry.dto.ReviewResponseDTO;
+import com.example.customer_inquiry_system_mobile.domain.notification.NotificationActivity;
 import com.example.customer_inquiry_system_mobile.global.HeaderUtils;
 import com.example.customer_inquiry_system_mobile.global.RetrofitService;
 
@@ -42,10 +42,7 @@ import retrofit2.Response;
 public class InquiryDetailActivity extends AppCompatActivity {
 
     private TextView
-            inquiryIdDetail,
-            inquiryTypeDetail,
-            customerNameDetail,
-            productTypeDetail;
+            inquiryIdDetail;
 
     private String
             name,
@@ -71,15 +68,33 @@ public class InquiryDetailActivity extends AppCompatActivity {
 
     private View indicatorDetail, indicatorInquiry, indicatorResponse;
 
+    // Layout 내의 Button 및 TextView 참조
+    Button inquiryTypeButton;
+    TextView progressTextView;
+    TextView customerNameTextView;
+    TextView firstReviewLabelTextView;
+    TextView finalReviewLabelTextView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inquiry_detail);
 
         inquiryIdDetail = findViewById(R.id.textViewInquiryId);
-        productTypeDetail = findViewById(R.id.productTypeDetail);
-        customerNameDetail = findViewById(R.id.customerNameDetail);
-        inquiryTypeDetail = findViewById(R.id.inquiryTypeDetail);
+
+        ImageView bellIcon = findViewById(R.id.bell);
+
+        bellIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(
+                        InquiryDetailActivity.this,
+                        NotificationActivity.class
+                );
+
+                startActivity(intent);
+            }
+        });
 
         recyclerViewLineItems = findViewById(R.id.recyclerViewLineItems);
         recyclerViewLineItems.setLayoutManager(new LinearLayoutManager(this));
@@ -98,11 +113,10 @@ public class InquiryDetailActivity extends AppCompatActivity {
         if (inquiryId != -1) {
             fetchInquiryById(inquiryId, productType);
         } else {
-            Toast.makeText(
-                    this,
-                    "유효하지 않은 문의 ID입니다.",
-                    Toast.LENGTH_SHORT
-            ).show();
+            Log.e(
+                    "InquiryDetailActivity",
+                    "유효하지 않은 문의 id 입니다."
+            );
         }
 
         indicatorDetail = findViewById(R.id.indicatorDetail);
@@ -169,15 +183,42 @@ public class InquiryDetailActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        inquiryTypeButton = findViewById(R.id.inquiryListItem_InquiryType);
+        progressTextView = findViewById(R.id.inquiryListItem_Progress);
+        customerNameTextView = findViewById(R.id.inquiryListItem_CustomerName);
+        firstReviewLabelTextView = findViewById(R.id.firstReviewLabel);
+        finalReviewLabelTextView = findViewById(R.id.finalReviewLabel);
+
+        // Progress 배경 설정
+        GradientDrawable progressDrawable = new GradientDrawable();
+        progressDrawable.setShape(GradientDrawable.RECTANGLE);
+        progressDrawable.setCornerRadius(70);
+        progressDrawable.setColor(Color.parseColor("#03507D"));
+        progressTextView.setBackground(progressDrawable);
+        progressTextView.setTextColor(Color.parseColor("#FFFFFF"));
+
+        GradientDrawable firstReviewDrawable = new GradientDrawable();
+        firstReviewDrawable.setShape(GradientDrawable.RECTANGLE);
+        firstReviewDrawable.setCornerRadius(70);
+        firstReviewDrawable.setColor(Color.parseColor("#03507D"));
+        firstReviewLabelTextView.setBackground(progressDrawable);
+        firstReviewLabelTextView.setTextColor(Color.parseColor("#FFFFFF"));
+
+        GradientDrawable finalReviewDrawable = new GradientDrawable();
+        finalReviewDrawable.setShape(GradientDrawable.RECTANGLE);
+        finalReviewDrawable.setCornerRadius(70);
+        finalReviewDrawable.setColor(Color.parseColor("#03507D"));
+        finalReviewLabelTextView.setBackground(progressDrawable);
+        finalReviewLabelTextView.setTextColor(Color.parseColor("#FFFFFF"));
+
     }
 
     private void updateIndicator(View selectedIndicator) {
-        // 모든 작은 네모를 기본 색상으로 초기화
         indicatorDetail.setBackgroundColor(Color.WHITE);
         indicatorInquiry.setBackgroundColor(Color.WHITE);
         indicatorResponse.setBackgroundColor(Color.WHITE);
 
-        // 선택된 네모의 색상 변경
         selectedIndicator.setBackgroundColor(Color.parseColor("#B0CBFF")); // 선택된 색상
     }
 
@@ -194,6 +235,7 @@ public class InquiryDetailActivity extends AppCompatActivity {
         TextView textViewIndustry = findViewById(R.id.industry);
         TextView textViewCorporationCode = findViewById(R.id.corporationCode);
         TextView textViewProductType = findViewById(R.id.productType);
+        TextView textViewProductTypeText = findViewById(R.id.productTypeText);
         TextView textViewProgress = findViewById(R.id.progress);
         TextView textViewCustomerRequestDate = findViewById(R.id.customerRequestDate);
         TextView textViewAdditionalRequests = findViewById(R.id.additionalRequests);
@@ -204,6 +246,7 @@ public class InquiryDetailActivity extends AppCompatActivity {
         textViewName.setText(name);
         textViewEmail.setText(email);
         textViewProductType.setText(productType);
+        textViewProductTypeText.setText(productType);
         textViewProgress.setText(progress);
         textViewCustomerRequestDate.setText(customerRequestDate);
         textViewAdditionalRequests.setText(additionalRequests);
@@ -252,12 +295,10 @@ public class InquiryDetailActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(@NonNull Call<InquiryResponseDTO> call, @NonNull Throwable t) {
-                Log.e("API_CALL_FAILURE", "API 호출 실패: " + t.getMessage(), t);
-                Toast.makeText(
-                        InquiryDetailActivity.this,
-                        "API 호출 실패: " + t.getMessage(),
-                        Toast.LENGTH_SHORT
-                ).show();
+                Log.e(
+                        "InquiryDetailActivity",
+                        "API 호출 실패: " + t.getMessage()
+                );
             }
         });
     }
@@ -324,22 +365,20 @@ public class InquiryDetailActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(@NonNull Call<ReviewResponseDTO> call, @NonNull Throwable t) {
-                Log.e("API_CALL_FAILURE", "API 호출 실패: " + t.getMessage(), t);
-                Toast.makeText(
-                        InquiryDetailActivity.this,
-                        "API 호출 실패: " + t.getMessage(),
-                        Toast.LENGTH_SHORT
-                ).show();
+                Log.e(
+                        "InquiryDetailActivity",
+                        "API 호출 실패: " + t.getMessage()
+                );
             }
         });
     }
 
 
     private void updateUI(InquiryResponseDTO inquiryResponseDTO) {
-        inquiryIdDetail.setText(String.valueOf(inquiryResponseDTO.getInquiryId()));
-                inquiryTypeDetail.setText(inquiryResponseDTO.getInquiryType());
-                customerNameDetail.setText(inquiryResponseDTO.getCustomerName());
-                productTypeDetail.setText(inquiryResponseDTO.getProductType());
+        inquiryIdDetail.setText(inquiryResponseDTO.getCustomInquiryId());
+        inquiryTypeButton.setText(inquiryResponseDTO.getInquiryType());
+        progressTextView.setText(inquiryResponseDTO.getProgress());
+        customerNameTextView.setText(inquiryResponseDTO.getCustomerName());
 
         name = inquiryResponseDTO.getName();
         customerName = inquiryResponseDTO.getCustomerName();
@@ -358,6 +397,22 @@ public class InquiryDetailActivity extends AppCompatActivity {
         additionalRequests = inquiryResponseDTO.getAdditionalRequests();
         responseDeadline = inquiryResponseDTO.getResponseDeadline();
 
+        setInquiryTypeButton();
+
+        TextView managerNameTextView = findViewById(R.id.managerName);
+        TextView managerDepartmentTextView = findViewById(R.id.managerDepartment);
+
+        String salesManagerName = inquiryResponseDTO.getManagerName();
+        String salesManagerDepartment = inquiryResponseDTO.getManagerDepartment();
+
+        if (salesManagerName != null) {
+            managerNameTextView.setText(salesManagerName);
+            managerDepartmentTextView.setText(salesManagerDepartment);
+        } else {
+            managerNameTextView.setText("담당자 배정 전 입니다.");
+            managerDepartmentTextView.setText("N/A");
+        }
+
         setDetails();
     }
 
@@ -372,5 +427,24 @@ public class InquiryDetailActivity extends AppCompatActivity {
             finalReviewTextView.setText(reviewResponseDTO.getFinalReview());
             finalReviewTextView.setBackgroundResource(0);
             finalReviewTextView.setTextColor(getResources().getColor(android.R.color.black));
+    }
+
+    private void setInquiryTypeButton() {
+        Log.d("InquiryType", "Setting inquiry type: " + inquiryType);
+
+        GradientDrawable inquiryTypeDrawable = new GradientDrawable();
+        inquiryTypeDrawable.setShape(GradientDrawable.RECTANGLE); // 사각형 모양
+        inquiryTypeDrawable.setCornerRadius(70); // 모서리 반경 설정
+
+        if ("견적문의".equals(inquiryType)) {
+            inquiryTypeDrawable.setColor(Color.parseColor("#F8EDDB"));
+        } else if ("품질/견적문의".equals(inquiryType)) {
+            inquiryTypeDrawable.setColor(Color.parseColor("#C4DEDA"));
+        } else {
+            inquiryTypeDrawable.setColor(Color.TRANSPARENT); // 투명색 설정
+        }
+
+        inquiryTypeButton.setBackground(inquiryTypeDrawable); // Button 배경 설정
+        inquiryTypeButton.setText(inquiryType);
     }
 }

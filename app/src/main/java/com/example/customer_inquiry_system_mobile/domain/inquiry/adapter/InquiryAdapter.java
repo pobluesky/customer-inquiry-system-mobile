@@ -3,8 +3,8 @@ package com.example.customer_inquiry_system_mobile.domain.inquiry.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,9 +39,9 @@ public class InquiryAdapter extends RecyclerView.Adapter<InquiryHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull InquiryHolder holder, int position) {
-        InquiryResponseDTO inquiryResponseDTO =
-                inquiryResponseDTOList.get(position);
+        InquiryResponseDTO inquiryResponseDTO = inquiryResponseDTOList.get(position);
 
+        holder.customInquiryId.setText(inquiryResponseDTO.getCustomInquiryId());
         holder.inquiryType.setText(inquiryResponseDTO.getInquiryType());
         holder.progress.setText(inquiryResponseDTO.getProgress());
         holder.customerName.setText(inquiryResponseDTO.getCustomerName());
@@ -91,6 +91,15 @@ public class InquiryAdapter extends RecyclerView.Adapter<InquiryHolder> {
             intent.putExtra("file_name", inquiryResponseDTO.getFileName());
             intent.putExtra("file_path", inquiryResponseDTO.getFilePath());
             intent.putExtra("response_deadline", inquiryResponseDTO.getResponseDeadline());
+            intent.putExtra("custom_inquiry_id", inquiryResponseDTO.getCustomInquiryId());
+
+            String salesManagerName = inquiryResponseDTO.getManagerName();
+            String salesManagerDepartment = inquiryResponseDTO.getManagerDepartment();
+
+            if (salesManagerName != null) {
+                intent.putExtra("sales_manager_name", salesManagerName);
+                intent.putExtra("sales_manager_department", salesManagerDepartment);
+            }
 
             context.startActivity(intent);
         });

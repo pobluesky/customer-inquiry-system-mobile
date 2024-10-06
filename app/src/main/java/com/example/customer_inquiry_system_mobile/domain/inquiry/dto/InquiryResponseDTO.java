@@ -86,6 +86,18 @@ public class InquiryResponseDTO {
     @Expose
     private List<LineItemResponseDTO> lineItemResponseDTOs;
 
+    @SerializedName("managerName")
+    @Expose
+    private String managerName;
+
+    @SerializedName("managerDepartment")
+    @Expose
+    private String managerDepartment;
+
+    @SerializedName("customInquiryId")
+    @Expose
+    private String customInquiryId;
+
     public Long getInquiryId() {
         return inquiryId;
     }
@@ -164,5 +176,17 @@ public class InquiryResponseDTO {
 
     public List<LineItemResponseDTO> getLineItemResponseDTOs() {
         return lineItemResponseDTOs;
+    }
+
+    public String getManagerName() {
+        return managerName;
+    }
+
+    public String getManagerDepartment() {
+        return managerDepartment;
+    }
+
+    public String getCustomInquiryId() {
+        return customInquiryId;
     }
 }

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -121,7 +121,7 @@ public class ListFragment extends Fragment {
                 "최종검토"
         }, "Status");
 
-        setupSpinner(spinnerProductType, new String[]{
+        setupSpinner(spinnerIndustryType, new String[]{
                 "선택하세요.",
                 "자동차",
                 "기타",
@@ -142,7 +142,7 @@ public class ListFragment extends Fragment {
                 "빔"
         }, "Product Type");
 
-        setupSpinner(spinnerIndustryType, new String[]{
+        setupSpinner(spinnerProductType, new String[]{
                 "선택하세요.",
                 "냉연",
                 "열연",
@@ -197,21 +197,19 @@ public class ListFragment extends Fragment {
                 if (response.isSuccessful() && response.body() != null) {
                     populateListView(response.body());
                 } else {
-                    Toast.makeText(
-                            getContext(),
-                            "Failed to load inquiries: " + response.message(),
-                            Toast.LENGTH_LONG
-                    ).show();
+                    Log.e(
+                            "ListFragment",
+                            "Failed to load inquiries: " + response.message()
+                    );
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<List<InquiryResponseDTO>> call, @NonNull Throwable t) {
-                Toast.makeText(
-                        getContext(),
-                        "Failed to load inquiries",
-                        Toast.LENGTH_LONG
-                ).show();
+                Log.e(
+                        "ListFragment",
+                        "Failed to load inquiries"
+                );
             }
         });
     }
@@ -356,21 +354,19 @@ public class ListFragment extends Fragment {
                 if (response.isSuccessful() && response.body() != null) {
                     populateListView(response.body());
                 } else {
-                    Toast.makeText(
-                            getContext(),
-                            "Failed to load inquiries: " + response.message(),
-                            Toast.LENGTH_LONG
-                    ).show();
+                    Log.e(
+                            "ListFragment",
+                            "Failed to load inquiries: " + response.message()
+                    );
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<List<InquiryResponseDTO>> call, @NonNull Throwable t) {
-                Toast.makeText(
-                        getContext(),
-                        "Failed to load inquiries",
-                        Toast.LENGTH_LONG
-                ).show();
+                Log.e(
+                        "ListFragment",
+                        "Failed to load inquiries"
+                );
             }
         });
     }

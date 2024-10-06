@@ -1,5 +1,6 @@
 package com.example.customer_inquiry_system_mobile.domain.question.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -16,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.customer_inquiry_system_mobile.R;
 import com.example.customer_inquiry_system_mobile.domain.answer.api.AnswerAPI;
 import com.example.customer_inquiry_system_mobile.domain.answer.dto.AnswerResponseDTO;
+import com.example.customer_inquiry_system_mobile.domain.inquiry.fragment.InquiryDetailActivity;
+import com.example.customer_inquiry_system_mobile.domain.notification.NotificationActivity;
 import com.example.customer_inquiry_system_mobile.domain.question.api.QuestionAPI;
 import com.example.customer_inquiry_system_mobile.domain.question.dto.QuestionResponseDTO;
 import com.example.customer_inquiry_system_mobile.global.RetrofitService;
@@ -42,6 +45,20 @@ public class QuestionDetailActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_detail);
+
+        ImageView bellIcon = findViewById(R.id.bell);
+
+        bellIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(
+                        QuestionDetailActivity.this,
+                        NotificationActivity.class
+                );
+
+                startActivity(intent);
+            }
+        });
 
         inquiryNoLabel = findViewById(R.id.inquiryNoLabel);
         inquiryNo = findViewById(R.id.inquiryNo);

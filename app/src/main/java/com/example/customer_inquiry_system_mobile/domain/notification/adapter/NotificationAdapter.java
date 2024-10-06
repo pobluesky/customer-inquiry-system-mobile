@@ -51,7 +51,6 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
         holder.imageViewBell.setImageResource(R.drawable.bell_unread);
         holder.contentTextView.setText(notification.getNotificationContents());
-        holder.contentTextView.setTextColor(Color.parseColor("#03507D"));
         holder.imageViewChecked.setImageResource(R.drawable.checked);
         holder.itemView.setBackgroundResource(R.drawable.rounded_border_noti);
 

@@ -70,15 +70,20 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:fontFamily="@font/regular"
                     android:text="  INQUIRY 전체 조회"
-                    android:paddingBottom="10dp"
                     android:textColor="@color/black"
-                    android:gravity="start"
                     android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/arrow" />
 
                 <TextView
                     android:id="@+id/textViewInquiryId"
@@ -88,67 +93,57 @@
                     android:layout_marginStart="8dp" />
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:layout_marginBottom="10dp">
 
-                <LinearLayout
-                    android:layout_width="25dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/rounded_lavender_background"
+                <Button
+                    android:id="@+id/inquiryListItem_InquiryType"
+                    android:layout_width="120dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/button_rounded_background"
+                    android:fontFamily="@font/semibold"
                     android:gravity="center"
-                    android:padding="8dp">
+                    android:text="inquiryListItem_InquiryType"
+                    android:textColor="#505050"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/inquiryTypeDetail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="45dp"
-                        android:padding="8dp"
-                        android:gravity="center"
-                        android:text="문의유형"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="4dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <TextView
-                        android:id="@+id/customerNameDetail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:padding="8dp"
-                        android:text="고객사"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center"
+                <TextView
+                    android:id="@+id/inquiryListItem_Progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_marginEnd="2dp"
+                    android:fontFamily="@font/semibold"
+                    android:gravity="center_vertical"
+                    android:text="inquiryListItem_Progress"
+                    android:textSize="14sp"
                     android:padding="8dp"
-                    android:layout_margin="4dp">
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/productTypeDetail"
-                        android:layout_width="70dp"
-                        android:layout_height="40dp"
-                        android:text="제품유형"
-                        android:padding="8dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/inquiryListItem_CustomerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="132dp"
+                    android:layout_marginBottom="24dp"
+                    android:fontFamily="@font/regular"
+                    android:gravity="center_vertical"
+                    android:text="User Age"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -221,11 +216,8 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@android:color/darker_gray" />
+                    android:background="#E2E2E2" />
             </LinearLayout>
-
-
-
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -246,6 +238,7 @@
                     android:orientation="vertical"
                     android:padding="8dp"
                     android:gravity="center_vertical"
+                    android:layout_marginBottom="20dp"
                     android:background="@drawable/rectangle_detail">
 
                     <!-- 고객 이름 -->
@@ -323,6 +316,7 @@
                         android:orientation="vertical"
                         android:padding="8dp"
                         android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp"
                         android:background="@drawable/rectangle_detail">
 
                         <!-- 고객 이름 -->
@@ -333,16 +327,18 @@
                             android:gravity="center_vertical">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:padding="8dp"
                                 android:text="고객사명"
                                 android:fontFamily="@font/semibold"/>
 
                             <TextView
                                 android:id="@+id/customerName"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:padding="8dp"
                                 android:textSize="14sp"
                                 android:fontFamily="@font/regular"/>
@@ -356,16 +352,18 @@
                             android:gravity="center_vertical">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:padding="8dp"
                                 android:text="고객 코드"
                                 android:fontFamily="@font/semibold"/>
 
                             <TextView
                                 android:id="@+id/customerCode"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:padding="8dp"
                                 android:textSize="14sp"
                                 android:fontFamily="@font/regular"/>
@@ -379,16 +377,18 @@
                             android:gravity="center_vertical">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:padding="8dp"
                                 android:text="판매 상사"
                                 android:fontFamily="@font/semibold"/>
 
                             <TextView
                                 android:id="@+id/corporate"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:padding="8dp"
                                 android:textSize="14sp"
                                 android:fontFamily="@font/regular"/>
@@ -402,16 +402,18 @@
                             android:gravity="center_vertical">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:padding="8dp"
                                 android:text="산업 분류"
                                 android:fontFamily="@font/semibold"/>
 
                             <TextView
                                 android:id="@+id/industry"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:padding="8dp"
                                 android:textSize="14sp"
                                 android:fontFamily="@font/regular"/>
@@ -650,7 +652,41 @@
         android:id="@+id/sectionInquiry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/semibold"
+            android:textSize="15sp"
+            android:text="제품 유형"
+            android:gravity="center"
+            android:textColor="#03507D"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/manager_border" />
+
+        <TextView
+            android:id="@+id/productTypeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:textColor="#505050"
+            android:layout_marginStart="30dp"
+            android:textSize="15sp" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D1D1D1" />
+
             <!-- inquiry 내역 Section -->
             <ScrollView
                 android:layout_width="match_parent"
@@ -692,39 +728,107 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp"
+                android:paddingBottom="16dp"
                 android:visibility="gone"> <!-- 초기 상태는 숨김 -->
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="30dp">
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/semibold"
-                    android:textSize="24sp"
+                    android:textSize="15sp"
+                    android:text="담당자"
+                    android:gravity="center"
+                    android:textColor="#03507D"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/manager_border" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="30dp" >
+
+                <TextView
+                    android:id="@+id/managerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+                    android:textColor="#505050"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/managerDepartment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/regular"
+                    android:textSize="10sp" />
+                </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:background="@drawable/rectangle_detail"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="20dp">
+                <TextView
+                    android:id="@+id/firstReviewLabel"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/semibold"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_marginBottom="5dp"
                     android:text="1차 검토 내용 " />
 
                 <TextView
                     android:id="@+id/firstReview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/regular"
-                    android:textSize="18sp"
+                    android:fontFamily="@font/light"
+                    android:textSize="12sp"
+                    android:textColor="#6B6B6B"
+                    android:layout_marginStart="5dp"
                     android:text="1차 검토 내용 " />
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/rectangle_detail">
+
+                <TextView
+                    android:id="@+id/finalReviewLabel"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/semibold"
-                    android:textSize="24sp"
-                    android:paddingTop="20dp"
-                    android:text="최종 검토" />
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="5dp"
+                    android:text="최종 검토 내용" />
 
                 <TextView
                     android:id="@+id/finalReview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/regular"
-                    android:textSize="18sp"
+                    android:fontFamily="@font/light"
+                    android:textSize="12sp"
+                    android:layout_marginStart="5dp"
+                    android:textColor="#6B6B6B"
                     android:text="최종 검토 내용 " />
+                </LinearLayout>
         </LinearLayout>
         </LinearLayout>
 </RelativeLayout>
