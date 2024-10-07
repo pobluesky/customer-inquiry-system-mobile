@@ -194,8 +194,8 @@ public class DashboardFragment extends Fragment {
         parseChartData(data.get("total"), totalEntries);
         parseChartData(data.get("manager"), managerEntries);
 
-        LineDataSet totalDataSet = createLineDataSet(totalEntries, "Total", "#0079FF");
-        LineDataSet managerDataSet = createLineDataSet(managerEntries, "Manager", "#FF0060");
+        LineDataSet totalDataSet = createLineDataSet(totalEntries, "Total", "#0678BF");
+        LineDataSet managerDataSet = createLineDataSet(managerEntries, "Manager", "#F28080");
 
         LineData lineData = new LineData(totalDataSet, managerDataSet);
         lineChartMonthly.setData(lineData);
@@ -267,10 +267,10 @@ public class DashboardFragment extends Fragment {
         Map<String, String> managerData = data.get("manager");
 
         updatePieChart(pieChartTotal, totalData, "Total",
-                new int[] { Color.rgb(179, 200, 207), Color.rgb(0, 169, 255) });
+                new int[] { Color.rgb(37, 217, 199), Color.rgb(6, 120, 191) });
 
         updatePieChart(pieChartManager, managerData, "Manager",
-                new int[] { Color.rgb(179, 200, 207), Color.rgb(247, 65, 143) });
+                new int[] { Color.rgb(242, 233, 187), Color.rgb(242, 128, 128) });
     }
 
     private void updatePieChart(PieChart pieChart, Map<String, String> data, String label, int[] colors) {
@@ -361,16 +361,16 @@ public class DashboardFragment extends Fragment {
 
     private BarDataSet createBarDataSet(List<BarEntry> entries) {
         BarDataSet dataSet = new BarDataSet(entries, "Total");
-        dataSet.setColor(Color.parseColor("#00DFA2"));
+        dataSet.setColor(Color.parseColor("#0678BF"));
         dataSet.setDrawValues(false);
         return dataSet;
     }
 
     private LineDataSet createLineDataSet(List<Entry> entries) {
         LineDataSet dataSet = new LineDataSet(entries, "Manager");
-        dataSet.setColor(Color.parseColor("#FF0060"));
-        dataSet.setCircleColor(Color.parseColor("#FF0060"));
-        dataSet.setCircleHoleColor(Color.parseColor("#FF0060"));
+        dataSet.setColor(Color.parseColor("#F28080"));
+        dataSet.setCircleColor(Color.parseColor("#F28080"));
+        dataSet.setCircleHoleColor(Color.parseColor("#F28080"));
         dataSet.setCircleRadius(6f);
         dataSet.setLineWidth(4f);
         dataSet.setDrawFilled(true);
@@ -397,8 +397,8 @@ public class DashboardFragment extends Fragment {
         List<RadarEntry> totalEntries = createRadarEntries(totalData, categories);
         List<RadarEntry> managerEntries = createRadarEntries(managerData, categories);
 
-        RadarDataSet totalDataSet = createRadarDataSet(totalEntries, "Total", "#00DFA2");
-        RadarDataSet managerDataSet = createRadarDataSet(managerEntries, "Manager", "#FF0060");
+        RadarDataSet totalDataSet = createRadarDataSet(totalEntries, "Total", "#0678BF");
+        RadarDataSet managerDataSet = createRadarDataSet(managerEntries, "Manager", "#F28080");
 
         RadarData radarData = new RadarData(totalDataSet, managerDataSet);
         configureRadarChart(radarChart, radarData);
