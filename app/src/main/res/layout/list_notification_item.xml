@@ -18,7 +18,7 @@
     <TextView
         android:id="@+id/notificationContent"
         android:layout_width="0dp"
-        android:layout_height="31dp"
+        android:layout_height="60dp"
         android:layout_weight="1"
         android:gravity="center"
         android:textSize="14sp"

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,6 +92,7 @@ public class QuestionFragment extends Fragment {
                             "Failed to load questions: " + response.message(),
                             Toast.LENGTH_LONG
                     ).show();
+                    Log.d("Question", response.message());
                 }
             }
 
