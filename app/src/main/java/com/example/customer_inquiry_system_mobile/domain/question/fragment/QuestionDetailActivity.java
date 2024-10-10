@@ -3,6 +3,7 @@ package com.example.customer_inquiry_system_mobile.domain.question.fragment;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -103,7 +104,10 @@ public class QuestionDetailActivity extends AppCompatActivity {
                     type.setText(questionResponseDTO.getType());
                     status.setText(questionResponseDTO.getStatus());
                     title.setText(questionResponseDTO.getTitle());
-                    questionContents.setText(questionResponseDTO.getContents());
+                    questionContents.setText(Html.fromHtml(
+                            questionResponseDTO.getContents(),
+                            Html.FROM_HTML_MODE_LEGACY)
+                    );
 
                     if(inquiryId != null && Objects.equals(questionResponseDTO.getType(), "주문문의")){
                         inquiryNo.setText(String.valueOf(inquiryId));
@@ -156,8 +160,6 @@ public class QuestionDetailActivity extends AppCompatActivity {
         });
     }
 
-
-
     private void fetchAnswerByQuestionId(Long questionId) {
         RetrofitService retrofitService = new RetrofitService(null);
         AnswerAPI answerAPI = retrofitService.getRetrofit().create(AnswerAPI.class);
@@ -172,7 +174,10 @@ public class QuestionDetailActivity extends AppCompatActivity {
                     AnswerResponseDTO answerResponseDTO = response.body();
 
                     answerTitle.setText(answerResponseDTO.getTitle());
-                    answerContents.setText(answerResponseDTO.getContents());
+                    answerContents.setText(Html.fromHtml(
+                            answerResponseDTO.getContents(),
+                            Html.FROM_HTML_MODE_LEGACY
+                    ));
                 }
             }
 
