@@ -67,7 +67,11 @@ public class ListFragment extends Fragment {
             ViewGroup container,
             Bundle savedInstanceState
     ) {
-        View rootView = inflater.inflate(R.layout.fragment_list, container, false);
+        View rootView = inflater.inflate(
+                R.layout.fragment_list,
+                container,
+                false
+        );
 
         recyclerView = rootView.findViewById(R.id.inquiryList_recyclerView);
         btnFilter = rootView.findViewById(R.id.btn_filter);

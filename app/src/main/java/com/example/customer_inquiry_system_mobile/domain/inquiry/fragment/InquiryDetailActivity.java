@@ -239,7 +239,6 @@ public class InquiryDetailActivity extends AppCompatActivity {
         TextView textViewProgress = findViewById(R.id.progress);
         TextView textViewCustomerRequestDate = findViewById(R.id.customerRequestDate);
         TextView textViewAdditionalRequests = findViewById(R.id.additionalRequests);
-        TextView textViewResponseDeadline = findViewById(R.id.responseDeadline);
 
         textViewCustomerName.setText(customerName);
         textViewCustomerCode.setText(customerCode);
@@ -250,7 +249,6 @@ public class InquiryDetailActivity extends AppCompatActivity {
         textViewProgress.setText(progress);
         textViewCustomerRequestDate.setText(customerRequestDate);
         textViewAdditionalRequests.setText(additionalRequests);
-        textViewResponseDeadline.setText(responseDeadline);
         textViewPhone.setText(phone);
         textViewCountry.setText(country);
         textViewCorporate.setText(corporate);
